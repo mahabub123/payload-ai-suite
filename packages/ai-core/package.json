@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "AI core: providers, router, agent runtime, tools, prompts, guardrails, knowledge, memory, usage, budgets, audit",
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -37,7 +37,7 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "restricted",
+    "access": "public",
     "exports": {
       ".": {
         "types": "./dist/index.d.ts",
