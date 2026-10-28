@@ -47,7 +47,6 @@ jobs:
         working-directory: .release/payload-ai-suite
         run: |
           set -o pipefail
-          version=$(node -p|
           version=$(node -p "require('./package.json').version")
           if npm view "payload-ai-suite@$version" version > /dev/null 2>&1; then
             echo "payload-ai-suite@$version is already on npm, nothing to publish"
