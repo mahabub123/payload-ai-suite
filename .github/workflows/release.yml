@@ -46,9 +46,13 @@ jobs:
       - name: Publish payload-ai-suite
         working-directory: .release/payload-ai-suite
         run: |
+          set -o pipefail
+          version=$(node -p|
           version=$(node -p "require('./package.json').version")
           if npm view "payload-ai-suite@$version" version > /dev/null 2>&1; then
             echo "payload-ai-suite@$version is already on npm, nothing to publish"
-          else
-            npm publish --access public --ignore-scripts
+          elif ! npm publish --access public --ignore-scripts 2>&1 | tee publish.log; then
+            # npm may hold publishes for approval on npmjs.com; a re-run then finds the staged version.
+            grep -q "previously staged version" publish.log || exit 1
+            echo "::notice::payload-ai-suite@$version is staged on npm. Approve it on npmjs.com to make it live."
           fi

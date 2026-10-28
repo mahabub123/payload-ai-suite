@@ -114,7 +114,8 @@ jobs:
   e2e:
     name: E2E (Playwright + Mailpit, mock model)
     needs: [check, integration]
-    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'e2e')
+    # Pull requests run e2e only with the "e2e" label; pushes and releases always do.
+    if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'e2e')
     runs-on: ubuntu-latest
     timeout-minutes: 40
     services:
