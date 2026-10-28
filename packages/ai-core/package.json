@@ -37,6 +37,7 @@
     "dist"
   ],
   "publishConfig": {
+    "access": "restricted",
     "exports": {
       ".": {
         "types": "./dist/index.d.ts",
@@ -73,26 +74,32 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "payload": "3.92.1",
     "zod": "^4.1.0",
     "ai": "^7.0.0",
     "@ai-sdk/openai": "^4.0.0",
     "@ai-sdk/anthropic": "^4.0.0",
-    "@ai-sdk/google": "*",
-    "@ai-sdk/mistral": "*",
-    "@ai-sdk/groq": "*",
+    "@ai-sdk/google": "^4.0.107",
+    "@ai-sdk/mistral": "^4.0.74",
+    "@ai-sdk/groq": "^4.0.72",
     "@ai-sdk/openai-compatible": "^3.0.0",
     "@openrouter/ai-sdk-provider": "^3.0.0",
     "sanitize-html": "^2.17.0",
-    "marked": "*"
+    "marked": "^18.1.2"
   },
   "peerDependencies": {
-    "@payloadcms/ui": "3.92.1",
-    "react": "^19.0.0"
+    "@payloadcms/ui": "^3.92.1",
+    "react": "^19.0.0",
+    "payload": "^3.92.1"
   },
   "devDependencies": {
     "@types/sanitize-html": "*",
     "@payloadcms/ui": "3.92.1",
-    "@payloadcms/db-postgres": "3.92.1"
+    "@payloadcms/db-postgres": "3.92.1",
+    "payload": "3.92.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahabub123/payload-ai-suite.git",
+    "directory": "packages/ai-core"
   }
 }

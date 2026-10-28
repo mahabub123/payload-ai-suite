@@ -17,6 +17,7 @@
     "dist"
   ],
   "publishConfig": {
+    "access": "restricted",
     "exports": {
       ".": {
         "types": "./dist/index.d.ts",
@@ -33,8 +34,18 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "payload": "3.92.1",
     "zod": "^4.1.0",
     "@payload-ai-suite/ai-core": "workspace:*"
+  },
+  "devDependencies": {
+    "payload": "3.92.1"
+  },
+  "peerDependencies": {
+    "payload": "^3.92.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahabub123/payload-ai-suite.git",
+    "directory": "packages/ai-assistant"
   }
 }

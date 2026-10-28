@@ -208,9 +208,6 @@ importers:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       zod:
         specifier: ^4.1.0
         version: 4.6.7
@@ -218,18 +215,22 @@ importers:
       '@payloadcms/plugin-ecommerce':
         specifier: 3.92.1
         version: 3.92.1(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-assistant:
     dependencies:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       zod:
         specifier: ^4.1.0
         version: 4.6.7
+    devDependencies:
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-channels:
     dependencies:
@@ -239,24 +240,19 @@ importers:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       zod:
         specifier: ^4.1.0
         version: 4.6.7
+    devDependencies:
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-content:
     dependencies:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      '@payloadcms/richtext-lexical':
-        specifier: 3.92.1
-        version: 3.92.1(@faceless-ui/modal@3.0.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@faceless-ui/scroll-info@2.0.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@payloadcms/next@3.92.1(@types/react@19.3.0)(graphql@16.14.2)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3))(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)(yjs@13.6.33)
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       react:
         specifier: ^19.0.0
         version: 19.3.1
@@ -264,18 +260,21 @@ importers:
         specifier: ^4.1.0
         version: 4.6.7
     devDependencies:
+      '@payloadcms/richtext-lexical':
+        specifier: 3.92.1
+        version: 3.92.1(@faceless-ui/modal@3.0.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@faceless-ui/scroll-info@2.0.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(@payloadcms/next@3.92.1(@types/react@19.3.0)(graphql@16.14.2)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3))(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)(yjs@13.6.33)
       '@payloadcms/ui':
         specifier: 3.92.1
         version: 3.92.1(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-copilot:
     dependencies:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       react:
         specifier: ^19.0.0
         version: 19.3.1
@@ -286,6 +285,9 @@ importers:
       '@payloadcms/ui':
         specifier: 3.92.1
         version: 3.92.1(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-core:
     dependencies:
@@ -293,13 +295,13 @@ importers:
         specifier: ^4.0.0
         version: 4.0.90(zod@4.6.7)
       '@ai-sdk/google':
-        specifier: '*'
+        specifier: ^4.0.107
         version: 4.0.107(zod@4.6.7)
       '@ai-sdk/groq':
-        specifier: '*'
+        specifier: ^4.0.72
         version: 4.0.72(zod@4.6.7)
       '@ai-sdk/mistral':
-        specifier: '*'
+        specifier: ^4.0.74
         version: 4.0.74(zod@4.6.7)
       '@ai-sdk/openai':
         specifier: ^4.0.0
@@ -314,11 +316,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.155(zod@4.6.7)
       marked:
-        specifier: '*'
+        specifier: ^18.1.2
         version: 18.1.2
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       react:
         specifier: ^19.0.0
         version: 19.3.1
@@ -338,15 +337,15 @@ importers:
       '@types/sanitize-html':
         specifier: '*'
         version: 2.16.2
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-insights:
     dependencies:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       react:
         specifier: ^19.0.0
         version: 19.3.1
@@ -357,15 +356,15 @@ importers:
       '@payloadcms/ui':
         specifier: 3.92.1
         version: 3.92.1(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-marketing:
     dependencies:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       react:
         specifier: ^19.0.0
         version: 19.3.1
@@ -376,18 +375,22 @@ importers:
       '@payloadcms/ui':
         specifier: 3.92.1
         version: 3.92.1(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-media:
     dependencies:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       zod:
         specifier: ^4.1.0
         version: 4.6.7
+    devDependencies:
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-react:
     devDependencies:
@@ -406,12 +409,13 @@ importers:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       zod:
         specifier: ^4.1.0
         version: 4.6.7
+    devDependencies:
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-suite:
     dependencies:
@@ -448,21 +452,19 @@ importers:
       '@payload-ai-suite/ai-support':
         specifier: workspace:*
         version: link:../ai-support
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       zod:
         specifier: ^4.1.0
         version: 4.6.7
+    devDependencies:
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   packages/ai-support:
     dependencies:
       '@payload-ai-suite/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      payload:
-        specifier: 3.92.1
-        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
       react:
         specifier: ^19.0.0
         version: 19.3.1
@@ -473,6 +475,9 @@ importers:
       '@payloadcms/ui':
         specifier: 3.92.1
         version: 3.92.1(@types/react@19.3.0)(monaco-editor@0.57.0)(next@16.4.3(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(sass@1.77.4))(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@5.9.3)
+      payload:
+        specifier: 3.92.1
+        version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
 
   tooling:
     dependencies:
