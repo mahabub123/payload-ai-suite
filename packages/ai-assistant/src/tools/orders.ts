@@ -9,11 +9,20 @@ type OrderAccess =
   | { mode: 'guest'; identity: Required<Pick<VerifiedIdentity, 'orderNumber' | 'email'>> & VerifiedIdentity }
 
 /** Who may see which orders in this request. Confirm-time requests re-resolve the guest verification. */
+/**
+ * A customer proven by a one-time code (or a linked channel) has no Payload session, so the store's
+ * access rules would refuse the read. Ownership is already proven and the adapter filters and re-checks
+ * by customer id, so those reads run as system, scoped to that customer.
+ */
+const verifiedCustomerCtx = (ctx: ToolContext, customerId: string): AdapterContext => ({ ...systemAdapterCtx(ctx), customerId })
+
 export const resolveOrderAccess = async (ctx: ToolContext): Promise<OrderAccess | null> => {
-  if (ctx.actor.customerId) return { mode: 'customer', customerId: ctx.actor.customerId, adapterCtx: ctx.adapterCtx }
+  if (ctx.actor.customerId) {
+    const session = ctx.actor.kind === 'customer' && ctx.actor.user
+    return { mode: 'customer', customerId: ctx.actor.customerId, adapterCtx: session ? ctx.adapterCtx : verifiedCustomerCtx(ctx, ctx.actor.customerId) }
+  }
   const ident = turnOf(ctx)?.identity ?? (await findVerifiedIdentity(ctx, ctx.services))
-  if (ident?.customerId)
-    return { mode: 'customer', customerId: ident.customerId, adapterCtx: { ...ctx.adapterCtx, customerId: ident.customerId } }
+  if (ident?.customerId) return { mode: 'customer', customerId: ident.customerId, adapterCtx: verifiedCustomerCtx(ctx, ident.customerId) }
   if (ident?.orderNumber && ident.email) return { mode: 'guest', identity: { ...ident, orderNumber: ident.orderNumber, email: ident.email } }
   return null
 }

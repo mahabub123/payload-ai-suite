@@ -44,9 +44,11 @@ export default function () {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'text/event-stream',
-      // Distinct visitor per VU so per-visitor rate limits model real traffic.
-      'X-Visitor-Id': `k6-${__VU}`,
-      Cookie: `ai_vid=k6-${__VU}`,
+      // One stable visitor (cookie ids must be 16-64 chars) and one client IP per VU, so per-visitor and
+      // per-IP rate limits see 50 separate shoppers rather than one client. X-Forwarded-For is only honoured
+      // because the dev server has no proxy in front; never rely on it in production.
+      Cookie: `ai_vid=k6-loadtest-visitor-${String(__VU).padStart(4, '0')}`,
+      'X-Forwarded-For': `10.0.${Math.floor(__VU / 250)}.${(__VU % 250) + 1}`,
     },
     timeout: '60s',
   })

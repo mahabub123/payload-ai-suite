@@ -181,6 +181,7 @@ const enforceRateLimit = async (
   req: PayloadRequest,
   services: CoreServices,
   settings: Settings,
+  newVisitor = false,
 ): Promise<void> => {
   if (def.rateLimit === false) return
   const isStaff = actor.kind === 'staff'
@@ -200,6 +201,9 @@ const enforceRateLimit = async (
     const checks = [services.rateLimit.hit(`rl:${scope}:${who}`, r)]
     // IPs are shared (NAT, mobile carriers), so they get a wider allowance than a single visitor.
     if (!isStaff) checks.push(services.rateLimit.hit(`rl:${scope}:ip:${ipHash}`, { limit: r.limit * 5, windowSec: r.windowSec }))
+    // A client that never keeps the visitor cookie gets a fresh identity per request, which would dodge the
+    // per-visitor limit. New identities per IP are capped at the per-visitor rate (browsers mint one, once).
+    if (newVisitor && actor.kind === 'visitor') checks.push(services.rateLimit.hit(`rl:${scope}:newvid:${ipHash}`, r))
     for (const res of await Promise.all(checks)) {
       if (!res.ok) throw new AIError('rate_limit', 'Too many requests, please slow down', { details: { retryAfterSec: res.resetSec } })
     }
@@ -439,7 +443,7 @@ export const toPayloadEndpoint = (def: AIEndpointDefinition<any>): Endpoint => (
       }
       checkAccess(def.access, identity.actor)
       const settings = await services.settings(req.payload, tenant)
-      if (def.access !== 'webhook') await enforceRateLimit(def, identity.actor, req, services, settings)
+      if (def.access !== 'webhook') await enforceRateLimit(def, identity.actor, req, services, settings, Boolean(identity.setCookie))
       if (def.budget !== false) await services.budgets.assert({ payload: req.payload, tenant, module: def.module })
 
       let rawBody: string | undefined

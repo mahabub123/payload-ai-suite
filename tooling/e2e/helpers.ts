@@ -31,15 +31,22 @@ export const adminLogin = async (page: Page, email: string) => {
 
 /** Opens the floating assistant and sends a message; returns the assistant log locator. */
 export const askAssistant = async (page: Page, message: string) => {
-  const launcher = page.getByRole('button', { name: /assistant|chat|help/i }).first()
-  if (await launcher.isVisible().catch(() => false)) await launcher.click()
   const input = page.getByRole('textbox', { name: /message|ask/i }).last()
+  // The launcher toggles the panel, so only press it while the panel is closed.
+  if (!(await input.isVisible().catch(() => false))) await page.getByRole('button', { name: /assistant|chat|help/i }).first().click()
   await input.fill(message)
   await input.press('Enter')
   const log = page.getByRole('log').last()
   await expect(log).toBeVisible()
   return log
 }
+
+/**
+ * JSON API call with the page's session. Payload ignores the session cookie on requests without an
+ * Origin (browsers always send one), so set it explicitly.
+ */
+export const apiPost = (page: Page, path: string, data: unknown) =>
+  page.request.post(path, { data, headers: { Origin: new URL(page.url()).origin } })
 
 interface MailpitSummary {
   ID: string

@@ -13,6 +13,8 @@ export default defineConfig({
   timeout: 60_000,
   expect: { timeout: 15_000 },
   fullyParallel: false,
+  // One worker: parallel files log in as the same seed users, and concurrent logins race on Payload's session list.
+  workers: 1,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [['list'], ['html', { open: 'never' }]] : 'list',
   use: { baseURL, trace: 'retain-on-failure', screenshot: 'only-on-failure', locale: 'en-US' },

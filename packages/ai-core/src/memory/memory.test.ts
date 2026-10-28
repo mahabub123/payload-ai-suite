@@ -23,6 +23,15 @@ describe('MemoryService', () => {
     expect(ctx.messages).toEqual([{ role: 'user', content: 'hi' }])
   })
 
+  it('a visitor who verifies an order keeps their thread; another visitor verified as the same customer does not', async () => {
+    const { memory, payload, visitor } = setup()
+    const verified = (vid: string) => createTestContext({ payload, module: 'assistant', actor: { kind: 'visitor', roles: [], visitorId: vid, customerId: '42' } })
+    const t = await memory.thread(visitor('v1'), { channel: 'web' })
+    await memory.append(t.id, { role: 'user', text: 'Where is order DS-2001?' }, verified('v1'))
+    expect((await memory.context(t.id, verified('v1'))).messages).toHaveLength(1)
+    await expect(memory.append(t.id, { role: 'user', text: 'x' }, verified('v2'))).rejects.toMatchObject({ code: 'forbidden' })
+  })
+
   it('customer threads are keyed by hashed customer id', async () => {
     const { memory, payload, services } = setup()
     const c = (id: string) => createTestContext({ payload, actor: { kind: 'customer', roles: ['customer'], customerId: id } })

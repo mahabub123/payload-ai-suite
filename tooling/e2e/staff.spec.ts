@@ -1,38 +1,43 @@
 import { expect, test } from '@playwright/test'
-import { adminLogin, askAssistant, users } from './helpers'
+import { adminLogin, apiPost, askAssistant, users } from './helpers'
 
 test.describe('staff', () => {
   test('content editor enriches a product description with AI (nothing auto-publishes)', async ({ page }) => {
     await adminLogin(page, users.content)
     await page.goto('/admin/collections/products')
     await page.getByRole('link', { name: 'Brass Hurricane Lamp' }).click()
-    await page.getByRole('button', { name: /AI|write with ai|generate/i }).first().click()
-    await page.getByRole('menuitem', { name: /write/i }).click().catch(() => undefined)
-    const accept = page.getByRole('button', { name: /accept|insert|use/i }).first()
-    await expect(accept).toBeVisible()
-    await accept.click()
-    await page.getByRole('button', { name: /save draft/i }).click()
-    await expect(page.getByText(/saved|updated/i).first()).toBeVisible()
+    // Every AI-enabled field has its own button; use the one on the Description (rich text) field.
+    await page.locator('.rich-text-lexical').getByRole('button', { name: '✨ AI' }).click()
+    await page.getByRole('button', { name: 'Write description' }).click()
+    const insert = page.getByRole('button', { name: 'Insert', exact: true })
+    await expect(insert).toBeEnabled()
+    await insert.click()
+    // Products autosave drafts: the edit lands as an unpublished change and is never published by the AI.
+    await expect(page.getByText('Last saved', { exact: false })).toBeVisible()
+    await expect(page.getByText(/Status:\s*Changed/)).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Publish changes' })).toBeVisible()
   })
 
   test('marketing approver approves a drafted campaign', async ({ page }) => {
-    // Draft via the API as the marketing user, then approve in the admin.
+    // Create a campaign and draft its first step via the API as the marketing user, then approve in the admin.
     await adminLogin(page, users.marketing)
-    const draft = await page.request.post('/api/ai/marketing/drafts', {
-      data: { kind: 'campaign', brief: 'Eid sale: 10% off panjabi', segment: { all: true }, locale: 'en' },
-    })
-    expect([200, 201]).toContain(draft.status())
-    await page.goto('/admin/collections/ai-campaigns')
-    await page.getByRole('link').filter({ hasText: /eid/i }).first().click()
-    await page.getByRole('button', { name: /approve/i }).click()
+    const created = await apiPost(page, '/api/ai-campaigns', { name: 'Eid welcome', kind: 'welcome', steps: [{ delayHours: 0 }] })
+    expect(created.status()).toBe(201)
+    const id = (await created.json()).doc.id
+    const draft = await apiPost(page, '/api/ai/marketing/drafts', { brief: 'Eid welcome: 10% off panjabi', campaignId: String(id), save: true, productCount: 0 })
+    expect(draft.status()).toBe(200)
+    await page.goto(`/admin/collections/ai-campaigns/${id}`)
+    await page.getByRole('button', { name: /review & approve/i }).click()
+    await page.getByRole('dialog', { name: 'Approve campaign' }).getByRole('button', { name: 'Approve', exact: true }).click()
     await expect(page.getByText(/approved/i).first()).toBeVisible()
   })
 
   test('support agent answers a hand-off ticket with a suggested reply', async ({ browser }) => {
-    // Shopper asks for a human -> ticket.
+    // Shopper asks for a human -> ticket. Wait for the reply: closing the page mid-stream aborts the turn.
     const shopper = await browser.newPage()
     await shopper.goto('/')
-    await askAssistant(shopper, 'I want to talk to a human about a damaged parcel')
+    const log = await askAssistant(shopper, 'I want to talk to a human about a damaged parcel')
+    await expect(log).toContainText(/passed this to our team/i)
     await shopper.close()
 
     const page = await browser.newPage()
@@ -40,9 +45,9 @@ test.describe('staff', () => {
     await page.goto('/admin/collections/ai-tickets')
     await page.getByRole('link').filter({ hasText: /damaged|human|hand/i }).first().click()
     await page.getByRole('button', { name: /suggest/i }).click()
-    const reply = page.getByRole('textbox', { name: /reply/i })
+    const reply = page.getByRole('textbox', { name: 'Reply (edit before sending)' })
     await expect(reply).not.toBeEmpty()
-    await page.getByRole('button', { name: /send|save/i }).first().click()
+    await page.getByRole('button', { name: 'Send reply' }).click()
     await expect(page.getByText(/sent|saved|answered/i).first()).toBeVisible()
   })
 

@@ -44,7 +44,13 @@ const QUERIES = [
 
 export default function () {
   const [q, kind] = QUERIES[Math.floor(Math.random() * QUERIES.length)]
-  const res = http.get(`${BASE}/api/ai/search?q=${encodeURIComponent(q)}`, { tags: { kind, name: 'search' } })
+  // Spread the load over simulated shoppers (stable visitor cookie + client IP per VU) so the per-visitor and
+  // per-IP rate limits behave as they would for real traffic, not one client at 15 req/s.
+  const headers = {
+    Cookie: `ai_vid=k6-loadtest-visitor-${String(__VU).padStart(4, '0')}`,
+    'X-Forwarded-For': `10.1.${Math.floor(__VU / 250)}.${(__VU % 250) + 1}`,
+  }
+  const res = http.get(`${BASE}/api/ai/search?q=${encodeURIComponent(q)}`, { headers, tags: { kind, name: 'search' } })
   let body = {}
   try {
     body = res.json()

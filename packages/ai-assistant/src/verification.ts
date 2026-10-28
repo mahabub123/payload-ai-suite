@@ -37,7 +37,8 @@ const VERIFIED_FOR_MS = 24 * 3_600_000
 
 const hashCode = (services: CoreServices, salt: string, code: string) => services.crypto.hashId(`${code}:assistant-otp:${salt}`)
 
-const sameHash = (a: string, b: string) => {
+const sameHash = (a: string, b: string | null | undefined) => {
+  if (!b) return false
   const x = Buffer.from(a)
   const y = Buffer.from(b)
   return x.length === y.length && timingSafeEqual(x, y)
@@ -51,6 +52,8 @@ const pending = async (ctx: AIContext, conversationId: string, owner: string) =>
     limit: 10,
     depth: 0,
     overrideAccess: true,
+    // codeHash and salt are hidden fields; Payload strips them from reads unless asked.
+    showHiddenFields: true,
   })
 
 const patch = (ctx: AIContext, id: string | number, data: Record<string, unknown>) =>

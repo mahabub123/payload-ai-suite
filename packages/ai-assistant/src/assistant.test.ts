@@ -247,3 +247,19 @@ describe('outcome job', () => {
     ])
   })
 })
+
+describe('order access for verified guests', () => {
+  it('reads as system scoped to the verified customer; logged-in customers keep their own access', async () => {
+    const { resolveOrderAccess } = await import('./tools/orders')
+    const { createToolContext } = await import('@payload-ai-suite/ai-core/testing')
+    const services = createFakeServices()
+    const guest = createToolContext(services, { surface: 'storefront', actor: { kind: 'visitor', roles: [], visitorId: 'v1', customerId: 'c42' } })
+    const g = await resolveOrderAccess(guest)
+    expect(g).toMatchObject({ mode: 'customer', customerId: 'c42', adapterCtx: { system: true, customerId: 'c42' } })
+    const user = { id: 'c7', collection: 'users' }
+    const shopper = createToolContext(services, { surface: 'storefront', actor: { kind: 'customer', roles: ['customer'], customerId: 'c7', user: user as never } })
+    const s = await resolveOrderAccess(shopper)
+    expect(s?.mode).toBe('customer')
+    expect((s as { adapterCtx: { system?: boolean } }).adapterCtx.system).toBeFalsy()
+  })
+})

@@ -145,7 +145,13 @@ export const createMemoryService = (svc: () => CoreServices): MemoryService => {
     const a = ctx.actor
     if (a.kind === 'system') return {}
     if (a.kind === 'staff' && a.user) return { userId: String(a.user.id) }
-    if (a.customerId) return { customerHash: svc().crypto.hashId(a.customerId), ...(a.channel ? { channelHash: a.channel.externalIdHash } : {}) }
+    // A guest who verified an order mid-conversation keeps owning the visitor thread they started.
+    if (a.customerId)
+      return {
+        customerHash: svc().crypto.hashId(a.customerId),
+        ...(a.channel ? { channelHash: a.channel.externalIdHash } : {}),
+        ...(a.visitorId ? { visitorHash: a.visitorId } : {}),
+      }
     if (a.kind === 'channel' && a.channel) return { channelHash: a.channel.externalIdHash }
     if (a.visitorId) return { visitorHash: a.visitorId }
     throw new AIError('forbidden', 'No identity for this conversation')

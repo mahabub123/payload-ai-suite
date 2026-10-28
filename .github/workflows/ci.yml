@@ -132,6 +132,7 @@ jobs:
     env:
       DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_store
       PAYLOAD_DB_PUSH: '0'
+      AI_MOCK: '1'
       SMTP_HOST: localhost
       SMTP_PORT: '1025'
       E2E_BASE_URL: http://localhost:3000
@@ -145,6 +146,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter dev-store payload migrate
       - run: pnpm --filter dev-store seed
+      - name: Index seeded content (knowledge + offerings) before the tests
+        run: pnpm --filter dev-store payload jobs:run --queue default --limit 500
       - run: pnpm --filter dev-store build
       - name: Start dev-store
         run: |

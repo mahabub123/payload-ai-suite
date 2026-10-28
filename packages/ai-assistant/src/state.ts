@@ -86,6 +86,8 @@ export const findVerifiedIdentity = async (
       limit: 1,
       depth: 0,
       overrideAccess: true,
+      // The encrypted email/order number are hidden fields.
+      showHiddenFields: true,
     })
     const doc = res.docs[0] as unknown as VerificationDoc | undefined
     if (!doc) return undefined

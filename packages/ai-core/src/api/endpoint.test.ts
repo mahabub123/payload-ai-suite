@@ -5,6 +5,7 @@ import type { AIEndpointDefinition, StreamWireEvent } from '../contracts'
 import { AIError } from '../contracts'
 import { createFakePayload, createFakeServices } from '../testing'
 import { setAI } from '../module/runtime'
+import { createMemoryRateLimiter } from '../ratelimit'
 import { toPayloadEndpoint, sseFrame, VISITOR_COOKIE, TURNSTILE_COOKIE } from './endpoint'
 
 const make = (o: { settings?: Record<string, unknown>; budgetExceeded?: boolean; options?: Record<string, unknown> } = {}) => {
@@ -103,6 +104,17 @@ describe('guard pipeline', () => {
     expect(res.status).toBe(429)
     expect(res.headers.get('retry-after')).toBe('30')
     expect(body.code).toBe('rate_limit')
+  })
+
+  it('caps fresh visitor identities per IP, so cookieless clients cannot dodge the visitor limit', async () => {
+    const { req, services } = make({ settings: { limits: { visitorPerMinute: 3, visitorPerDay: 1000 } } })
+    services.rateLimit = createMemoryRateLimiter()
+    const statuses: number[] = []
+    for (let i = 0; i < 5; i++) statuses.push((await call(def(), req({ body: {}, headers: { 'x-forwarded-for': '9.9.9.9' } }))).res.status)
+    expect(statuses).toEqual([200, 200, 200, 429, 429])
+    // A returning visitor (cookie kept) is limited per visitor, not by the new-identity cap.
+    const kept = { cookie: `${VISITOR_COOKIE}=abcdefabcdefabcdef12`, 'x-forwarded-for': '9.9.9.9' }
+    expect((await call(def(), req({ body: {}, headers: kept }))).res.status).toBe(200)
   })
 
   it('validates JSON body and merges route params', async () => {

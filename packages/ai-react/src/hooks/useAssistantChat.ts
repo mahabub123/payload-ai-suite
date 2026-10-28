@@ -196,9 +196,13 @@ export const useAssistantChat = (opts: UseAssistantChatOptions = {}) => {
         setVerify({ status: 'verified', message: 'Verified.' })
       } catch (e) {
         setVerify({ status: 'code-sent', message: e instanceof Error ? e.message : 'The code is invalid or has expired.' })
+        return
       }
+      // Answer the question that needed verification, so the shopper doesn't have to ask again.
+      const lastQuestion = [...stateRef.current.messages].reverse().find((m) => m.role === 'user')?.text
+      if (lastQuestion) await send(lastQuestion)
     },
-    [client],
+    [client, send],
   )
 
   const reset = useCallback(() => {
