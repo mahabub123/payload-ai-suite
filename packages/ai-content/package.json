@@ -1,6 +1,7 @@
 {
   "name": "payload-ai-content",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "private": true,
   "description": "Catalog & Content Studio",
   "type": "module",
   "license": "MIT",
@@ -27,7 +28,6 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public",
     "exports": {
       ".": {
         "types": "./dist/index.d.ts",

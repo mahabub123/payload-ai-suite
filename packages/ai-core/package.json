@@ -1,6 +1,7 @@
 {
   "name": "payload-ai-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "private": true,
   "description": "AI core: providers, router, agent runtime, tools, prompts, guardrails, knowledge, memory, usage, budgets, audit",
   "type": "module",
   "license": "MIT",
@@ -14,11 +15,6 @@
       "types": "./src/exports/client.ts",
       "import": "./src/exports/client.ts",
       "default": "./src/exports/client.ts"
-    },
-    "./rsc": {
-      "types": "./src/exports/rsc.ts",
-      "import": "./src/exports/rsc.ts",
-      "default": "./src/exports/rsc.ts"
     },
     "./wire": {
       "types": "./src/wire.ts",
@@ -37,7 +33,6 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public",
     "exports": {
       ".": {
         "types": "./dist/index.d.ts",
@@ -48,11 +43,6 @@
         "types": "./dist/exports/client.d.ts",
         "import": "./dist/exports/client.js",
         "default": "./dist/exports/client.js"
-      },
-      "./rsc": {
-        "types": "./dist/exports/rsc.d.ts",
-        "import": "./dist/exports/rsc.js",
-        "default": "./dist/exports/rsc.js"
       },
       "./wire": {
         "types": "./dist/wire.d.ts",

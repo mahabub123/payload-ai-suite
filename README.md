@@ -9,36 +9,38 @@ AI features for any business or ecommerce site built on **Payload CMS v3**. It i
 
 The full design is in [`docs/DESIGN.md`](docs/DESIGN.md), and coding rules are in [`docs/CONVENTIONS.md`](docs/CONVENTIONS.md).
 
-## Package map
-
-| Package | What it does | Phase |
-| --- | --- | --- |
-| `payload-ai-core` | Providers and router, agent/tool runtime, knowledge index (pgvector), prompts, guardrails, memory, usage, budgets, audit, settings UI | 0 |
-| `payload-ai-adapters` | `createAdapters({ preset, overrides, custom })` maps concepts to your collections | 0 |
-| `payload-ai-content` | Content Studio: descriptions, SEO, translation, tagging, bulk enrichment | 1 |
-| `payload-ai-search` | Hybrid semantic + keyword search, natural-language filters, recommendations | 1 |
-| `payload-ai-assistant` | Storefront chatbot: product Q&A, cart, order tracking, returns, leads, bookings, hand-off | 2 |
-| `payload-ai-marketing` | Email and campaign drafts, sequences, segments, approval before sending | 3 |
-| `payload-ai-support` | Ticket triage, suggested replies, auto-answer, review insights | 3 |
-| `payload-ai-channels` | The same assistant on WhatsApp, Messenger and email | 3 |
-| `payload-ai-insights` | Ask-your-data via typed metric tools, briefings, anomaly alerts | 4 |
-| `payload-ai-media` | Alt text, tagging, background removal, variations | 4 |
-| `payload-ai-copilot` | Staff assistant in the admin, bulk edits with preview, automations | 4 |
-| `payload-ai-react` | Search keeps a tight latency budget: the query embedding gets 250 ms (`embedTimeoutMs`) and query understanding 150 ms (`queryUnderstanding.timeoutMs`). If a call misses its deadline, that request falls back to keyword search. The result still arrives a moment later and is cached, so repeat queries get the full hybrid search. Gateways such as OpenRouter took 1–2 s per embedding in testing, so through a gateway a first-time query always falls back. Raise the timeouts if you would rather wait than fall back, or use a direct embedding provider.
-
-Storefront components: `AISuiteProvider`, `AssistantWidget`, `SearchBox`, `SearchResults`, `RecommendationsBlock`, hooks | — |
-| `payload-ai-suite` | **One-line install** that composes core and modules, and re-exports everything | — |
-| `apps/dev-store` | Payload 3 + Next 16 demo store on the official Ecommerce plugin (BDT + USD, English + Bangla) | — |
-| `apps/dev-services` | Demo for the services preset (a clinic: services, bookings, staff, locations) | — |
-| `tooling/` | Evals, k6 load tests, Playwright e2e, red-team prompts | — |
-
-## Install in your Payload app
+## Install
 
 ```bash
 pnpm add payload-ai-suite
 ```
 
-Or install `payload-ai-core` and only the modules you need. `payload`, `@payloadcms/ui`, `@payloadcms/richtext-lexical` (^3.92.1) and `react` (^19) are peer dependencies.
+Everything ships in this one package. `payload`, `@payloadcms/ui`, `@payloadcms/richtext-lexical` (^3.92.1) and `react` (^19) are peer dependencies.
+
+| Import | What it does |
+| --- | --- |
+| `payload-ai-suite` | **One-line install**: `aiSuite()` composes the core and the modules you turn on, and re-exports everything |
+| `payload-ai-suite/core` | Providers and router, agent/tool runtime, knowledge index (pgvector), prompts, guardrails, memory, usage, budgets, audit, settings UI |
+| `payload-ai-suite/adapters` | `createAdapters({ preset, overrides, custom })` maps concepts to your collections |
+| `payload-ai-suite/content` | Content Studio: descriptions, SEO, translation, tagging, bulk enrichment |
+| `payload-ai-suite/search` | Hybrid semantic + keyword search, natural-language filters, recommendations |
+| `payload-ai-suite/assistant` | Storefront chatbot: product Q&A, cart, order tracking, returns, leads, bookings, hand-off |
+| `payload-ai-suite/marketing` | Email and campaign drafts, sequences, segments, approval before sending |
+| `payload-ai-suite/support` | Ticket triage, suggested replies, auto-answer, review insights |
+| `payload-ai-suite/channels` | The same assistant on WhatsApp, Messenger and email |
+| `payload-ai-suite/insights` | Ask-your-data via typed metric tools, briefings, anomaly alerts |
+| `payload-ai-suite/media` | Alt text, tagging, background removal, variations |
+| `payload-ai-suite/copilot` | Staff assistant in the admin, bulk edits with preview, automations |
+| `payload-ai-suite/react` | Storefront components: `AISuiteProvider`, `AssistantWidget`, `SearchBox`, `SearchResults`, `RecommendationsBlock`, hooks |
+
+## Repository layout
+
+| Folder | Contents |
+| --- | --- |
+| `packages/ai-*` | Source for each part above (`packages/ai-content` becomes `payload-ai-suite/content`). They are workspace packages and are not published on their own. |
+| `apps/dev-store` | Payload 3 + Next 16 demo store on the official Ecommerce plugin (BDT + USD, English + Bangla) |
+| `apps/dev-services` | Demo for the services preset (a clinic: services, bookings, staff, locations) |
+| `tooling/` | Evals, k6 load tests, Playwright e2e, red-team prompts |
 
 ## Quick start (this repo)
 
@@ -141,10 +143,12 @@ Each entry under `modules` accepts `true` (use the defaults), an options object,
 | `channels` | `whatsapp`, `messenger`, `email` (env var names only); needs `assistant` |
 | `insights` / `media` / `copilot` | `copilot.automations`, ... |
 
+Search keeps a tight latency budget: the query embedding gets 250 ms (`embedTimeoutMs`) and query understanding 150 ms (`queryUnderstanding.timeoutMs`). If a call misses its deadline, that request falls back to keyword search. The result still arrives a moment later and is cached, so repeat queries get the full hybrid search. Gateways such as OpenRouter took 1–2 s per embedding in testing, so through a gateway a first-time query always falls back. Raise the timeouts if you would rather wait than fall back, or use a direct embedding provider.
+
 Storefront components:
 
 ```tsx
-import { AISuiteProvider, AssistantWidget, SearchBox, SearchResults, RecommendationsBlock } from 'payload-ai-react'
+import { AISuiteProvider, AssistantWidget, SearchBox, SearchResults, RecommendationsBlock } from 'payload-ai-suite/react'
 ```
 
 ## Security model (summary)
@@ -182,7 +186,7 @@ CI (`.github/workflows/ci.yml`) runs install, typecheck, unit tests and mock-mod
 
 ## Releasing
 
-Bump `version` in every `packages/*/package.json`, push, then publish a GitHub release tagged `v<version>`. The [Release workflow](.github/workflows/release.yml) runs CI and publishes each package to npm with trusted publishing; versions already on npm are skipped.
+Bump `version` in `packages/ai-suite/package.json`, push, then publish a GitHub release tagged `v<version>`. The [Release workflow](.github/workflows/release.yml) runs CI, assembles the single `payload-ai-suite` package with `pnpm package` (see [`scripts/assemble-package.mjs`](scripts/assemble-package.mjs)) and publishes it to npm with trusted publishing.
 
 ## License
 

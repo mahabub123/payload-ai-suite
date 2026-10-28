@@ -1,11 +1,12 @@
 name: Release
 
-# Publishing a GitHub release runs the checks, then publishes every package in packages/ to npm
-# at the version in its package.json. Versions already on npm are skipped, so a re-run is safe.
-# To release: bump "version" in every packages/*/package.json, push, then publish a release tagged v<version>.
+# Publishing a GitHub release runs the checks, then publishes the one npm package, payload-ai-suite,
+# assembled from all the workspace packages (see scripts/assemble-package.mjs). If its version is
+# already on npm, nothing is published, so a re-run is safe.
+# To release: bump "version" in packages/ai-suite/package.json, push, then publish a release tagged v<version>.
 #
-# Uses npm trusted publishing, so no npm token is stored in GitHub. Set up once per package on
-# npmjs.com: package Settings → Trusted publishing → GitHub Actions, workflow `release.yml`.
+# Uses npm trusted publishing, so no npm token is stored in GitHub. Set up once on npmjs.com:
+# payload-ai-suite Settings → Trusted publishing → GitHub Actions, workflow `release.yml`.
 on:
   release:
     types: [published]
@@ -28,7 +29,7 @@ jobs:
     needs: checks
     runs-on: ubuntu-latest
     permissions:
-      # Lets npm verify this workflow and add a provenance statement to each package.
+      # Lets npm verify this workflow and add a provenance statement to the package.
       id-token: write
     steps:
       - uses: actions/checkout@v4
@@ -40,20 +41,14 @@ jobs:
           cache: pnpm
           registry-url: https://registry.npmjs.org
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+      - run: pnpm package
 
-      # pnpm pack swaps in publishConfig (dist/ exports) and real versions for workspace:*;
-      # npm then publishes that tarball. Dependencies come first, so ai-core goes before the modules.
-      - name: Publish packages
+      - name: Publish payload-ai-suite
+        working-directory: .release/payload-ai-suite
         run: |
-          mkdir -p "$RUNNER_TEMP/packs"
-          for dir in $(pnpm -r --filter './packages/*' exec pwd); do
-            name=$(node -p "require('$dir/package.json').name")
-            version=$(node -p "require('$dir/package.json').version")
-            if npm view "$name@$version" version > /dev/null 2>&1; then
-              echo "$name@$version is already on npm, skipping"
-              continue
-            fi
-            (cd "$dir" && pnpm pack --pack-destination "$RUNNER_TEMP/packs" > /dev/null)
-            npm publish "$RUNNER_TEMP/packs/$name-$version.tgz" --access public --ignore-scripts
-          done
+          version=$(node -p "require('./package.json').version")
+          if npm view "payload-ai-suite@$version" version > /dev/null 2>&1; then
+            echo "payload-ai-suite@$version is already on npm, nothing to publish"
+          else
+            npm publish --access public --ignore-scripts
+          fi

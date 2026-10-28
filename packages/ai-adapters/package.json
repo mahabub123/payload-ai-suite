@@ -1,6 +1,7 @@
 {
   "name": "payload-ai-adapters",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "private": true,
   "description": "Business concept adapters and presets (ecommerce, services, content, custom)",
   "type": "module",
   "license": "MIT",
@@ -22,7 +23,6 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public",
     "exports": {
       ".": {
         "types": "./dist/index.d.ts",

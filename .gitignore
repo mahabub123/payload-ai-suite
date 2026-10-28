@@ -6,3 +6,4 @@ dist
 .env.local
 coverage
 graphify-out/cache
+.release
