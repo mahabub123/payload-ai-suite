@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { access } from '@payload-ai-suite/ai-core'
+import { access } from 'payload-ai-core'
 import { IDENTITIES, MESSAGES } from './constants'
 import { CHANNEL_NAMES } from './options'
 

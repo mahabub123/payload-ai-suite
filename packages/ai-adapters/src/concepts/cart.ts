@@ -1,5 +1,5 @@
-import type { AdapterContext, Cart, CartAdapter, OfferingAdapter } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, Cart, CartAdapter, OfferingAdapter } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { create, find, findOne, ownerId, update } from '../local'
 import type { Doc } from '../mapping/values'
 import { getPath, relId, setPath, toIso, toNum } from '../mapping/values'

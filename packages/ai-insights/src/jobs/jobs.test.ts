@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { createFakeServices, createTestContext, createToolContext } from '@payload-ai-suite/ai-core/testing'
-import type { AdapterContext, Order } from '@payload-ai-suite/ai-core'
+import { createFakeServices, createTestContext, createToolContext } from 'payload-ai-core/testing'
+import type { AdapterContext, Order } from 'payload-ai-core'
 import { adapters, fakePayload, order } from '../test/helpers'
 import { REPORTS } from '../collections'
 import { resolveInsightsOptions } from '../options'

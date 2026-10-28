@@ -1,5 +1,5 @@
 import type { Plugin } from 'payload'
-import { createAIModulePlugin } from '@payload-ai-suite/ai-core'
+import { createAIModulePlugin } from 'payload-ai-core'
 import { identitiesCollection, messagesCollection } from './collections'
 import { MODULE } from './constants'
 import { createWebhookEndpoints } from './endpoints'

@@ -1,4 +1,4 @@
-import type { ConceptName, ReturnRequestInput, Order, AdapterContext, Visibility } from '@payload-ai-suite/ai-core'
+import type { ConceptName, ReturnRequestInput, Order, AdapterContext, Visibility } from 'payload-ai-core'
 import type { CollectionSlug, Where } from 'payload'
 
 /** A collection slug; typed against the site's generated types when present, any string otherwise. */

@@ -1,6 +1,6 @@
 import { TICKETS_COLLECTION } from '../presets'
-import type { AdapterContext, Order, OrderAdapter, OrderSummary } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, Order, OrderAdapter, OrderSummary } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import type { Where } from 'payload'
 import { create, find, findOne, iterateDocs, ownerId } from '../local'
 import type { Doc } from '../mapping/values'

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Config } from 'payload'
-import { SUITE_KEY } from '@payload-ai-suite/ai-core'
+import { SUITE_KEY } from 'payload-ai-core'
 import { aiChannels } from './plugin'
 import { IDENTITIES, MESSAGES, TASK_INBOUND, TASK_SEND } from './constants'
 

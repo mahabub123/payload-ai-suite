@@ -1,4 +1,4 @@
-# @payload-ai-suite/ai-suite
+# payload-ai-suite
 
 The one-line install for the Payload AI Suite. `aiSuite(options)` does three things:
 
@@ -9,7 +9,7 @@ The one-line install for the Payload AI Suite. `aiSuite(options)` does three thi
 All of this is returned as a single Payload plugin (`slug: 'ai-suite'`). Put it **after** plugins that create the collections it maps, such as `ecommercePlugin`.
 
 ```ts
-import { aiSuite } from '@payload-ai-suite/ai-suite'
+import { aiSuite } from 'payload-ai-suite'
 
 aiSuite({
   preset: 'ecommerce',

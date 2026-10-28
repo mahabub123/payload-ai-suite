@@ -1,5 +1,5 @@
-import type { AdapterProvider, AdapterSet, AdapterValidationResult, ConceptName } from '@payload-ai-suite/ai-core'
-import { CONCEPTS } from '@payload-ai-suite/ai-core'
+import type { AdapterProvider, AdapterSet, AdapterValidationResult, ConceptName } from 'payload-ai-core'
+import { CONCEPTS } from 'payload-ai-core'
 import type { Payload } from 'payload'
 import { createBookingAdapter } from './concepts/booking'
 import { createCartAdapter } from './concepts/cart'

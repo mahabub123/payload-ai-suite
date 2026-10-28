@@ -1,6 +1,6 @@
 /** Test-only fakes: in-memory Payload Local API, offering + order adapters. */
 import type { Payload } from 'payload'
-import type { Facets, Offering, OfferingAdapter, OfferingSummary, Order, OrderAdapter } from '@payload-ai-suite/ai-core'
+import type { Facets, Offering, OfferingAdapter, OfferingSummary, Order, OrderAdapter } from 'payload-ai-core'
 
 type Doc = Record<string, any>
 

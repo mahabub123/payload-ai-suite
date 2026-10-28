@@ -1,5 +1,5 @@
-import { createFakeServices, createToolContext, type FakeServices } from '@payload-ai-suite/ai-core/testing'
-import type { AIContext, Category } from '@payload-ai-suite/ai-core'
+import { createFakeServices, createToolContext, type FakeServices } from 'payload-ai-core/testing'
+import type { AIContext, Category } from 'payload-ai-core'
 import { mediaModule } from '../src'
 import type { AiMediaOptions } from '../src/types'
 import { createFakePayload, seed, type FakePayload } from './fakePayload'

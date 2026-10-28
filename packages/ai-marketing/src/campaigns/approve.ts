@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import type { AIContext, AIEndpointDefinition, CoreServices } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AIContext, AIEndpointDefinition, CoreServices } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import type { PayloadRequest } from 'payload'
 import type { ResolvedMarketingOptions } from '../options'
 import { MODULE, SLUGS, TASKS, paramId, queueJob, userId } from '../util'

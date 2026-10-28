@@ -1,5 +1,5 @@
 import type { CollectionAfterChangeHook, CollectionAfterDeleteHook, CollectionConfig, PayloadRequest } from 'payload'
-import { getAI, hasAI } from '@payload-ai-suite/ai-core'
+import { getAI, hasAI } from 'payload-ai-core'
 import { matchFilter } from '../filter'
 import { idOf } from '../local'
 import { COPILOT_CONTEXT_FLAG } from '../options'

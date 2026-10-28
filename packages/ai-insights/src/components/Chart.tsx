@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import type { ChartSeries } from '@payload-ai-suite/ai-core/wire'
+import type { ChartSeries } from 'payload-ai-core/wire'
 
 const COLORS = ['#2f6fdb', '#e07b39', '#2a9d8f', '#b5179e', '#8a8a8a', '#e9c46a']
 const W = 560

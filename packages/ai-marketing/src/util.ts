@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
 import type { Payload, PayloadRequest } from 'payload'
-import { AIError } from '@payload-ai-suite/ai-core'
-import type { Money } from '@payload-ai-suite/ai-core'
+import { AIError } from 'payload-ai-core'
+import type { Money } from 'payload-ai-core'
 
 export const MODULE = 'marketing'
 

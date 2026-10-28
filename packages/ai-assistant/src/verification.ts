@@ -1,6 +1,6 @@
 import { randomBytes, randomInt, timingSafeEqual } from 'node:crypto'
-import { access, AIError } from '@payload-ai-suite/ai-core'
-import type { AIContext, CoreServices } from '@payload-ai-suite/ai-core'
+import { access, AIError } from 'payload-ai-core'
+import type { AIContext, CoreServices } from 'payload-ai-core'
 import type { CollectionConfig } from 'payload'
 import type { ResolvedAssistantOptions } from './options'
 import { MODULE, ownerKey, systemAdapterCtx, VERIFICATIONS } from './state'

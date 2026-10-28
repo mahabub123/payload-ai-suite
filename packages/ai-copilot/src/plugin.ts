@@ -1,5 +1,5 @@
 import type { Config, Plugin, TaskConfig } from 'payload'
-import { createAIModulePlugin, getAI } from '@payload-ai-suite/ai-core'
+import { createAIModulePlugin, getAI } from 'payload-ai-core'
 import { automationsCollection, changesetsCollection, runsCollection } from './collections'
 import { buildEndpoints } from './endpoints'
 import { attachAutomationHooks } from './automations/hooks'
@@ -8,7 +8,7 @@ import { DISPATCH_TASK, executeRun, RUN_TASK } from './automations/runner'
 import { resolveOptions, type AiCopilotOptions, type ResolvedCopilotOptions } from './options'
 import { buildCopilotTools } from './tools'
 
-export const COPILOT_PROVIDER_PATH = '@payload-ai-suite/ai-copilot/client#CopilotProvider'
+export const COPILOT_PROVIDER_PATH = 'payload-ai-copilot/client#CopilotProvider'
 
 const buildTasks = (opts: ResolvedCopilotOptions): TaskConfig<any>[] => [
   {

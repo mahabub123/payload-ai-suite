@@ -1,6 +1,6 @@
 import type { TaskConfig } from 'payload'
-import type { AIContext, Order, OfferingSummary, RecsResponse } from '@payload-ai-suite/ai-core'
-import { getAI } from '@payload-ai-suite/ai-core'
+import type { AIContext, Order, OfferingSummary, RecsResponse } from 'payload-ai-core'
+import { getAI } from 'payload-ai-core'
 import { MODULE, OFFERINGS_TABLE_NAME, SLUGS, TASKS } from './constants'
 import { errMessage, local, sessionHash, tenantData, tenantWhere } from './db'
 import { getSearchEngine, type SearchEngine } from './engine'

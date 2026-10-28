@@ -1,4 +1,4 @@
-import type { ActionStatus, Card, StreamWireEvent } from '@payload-ai-suite/ai-core/wire'
+import type { ActionStatus, Card, StreamWireEvent } from 'payload-ai-core/wire'
 
 export interface ChatUIMessage {
   /** Client id (stable key). */

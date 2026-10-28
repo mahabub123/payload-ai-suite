@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { createFakeServices } from '@payload-ai-suite/ai-core/testing'
+import { createFakeServices } from 'payload-ai-core/testing'
 import { createMediaHarness } from '../test/setup'
 import { SKIP_CONTEXT_KEY } from './constants'
 import { describeMedia } from './describe'

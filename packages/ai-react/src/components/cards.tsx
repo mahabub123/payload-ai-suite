@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
-import type { ActionStatus, Card, Cart, ChartSeries, Citation, OfferingSummary, Order, OrderSummary, Slot } from '@payload-ai-suite/ai-core/wire'
+import type { ActionStatus, Card, Cart, ChartSeries, Citation, OfferingSummary, Order, OrderSummary, Slot } from 'payload-ai-core/wire'
 import { formatDateTime, formatMoney } from '../format'
 import type { Labels } from './labels'
 import { labelsFor } from './labels'

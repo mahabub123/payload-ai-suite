@@ -1,6 +1,6 @@
 import type { Payload, PayloadRequest } from 'payload'
-import { AIError, getAI, hasRole } from '@payload-ai-suite/ai-core'
-import type { AIContext, CoreServices, SuiteRole, TaskClass } from '@payload-ai-suite/ai-core'
+import { AIError, getAI, hasRole } from 'payload-ai-core'
+import type { AIContext, CoreServices, SuiteRole, TaskClass } from 'payload-ai-core'
 import { AUTOMATIONS, RUNS } from '../collections'
 import { matchFilter } from '../filter'
 import { api, getPath, hasDrafts, idOf } from '../local'

@@ -1,5 +1,5 @@
 import type { Access, FieldAccess, PayloadRequest, TypedUser } from 'payload'
-import type { SuiteRole } from '@payload-ai-suite/ai-suite'
+import type { SuiteRole } from 'payload-ai-suite'
 
 /** Site roles stored on users.roles. */
 export const ROLES = ['super-admin', 'admin', 'content', 'marketing', 'support', 'manager', 'customer'] as const

@@ -1,5 +1,5 @@
-import type { AdapterContext, BookingAdapter, Slot } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, BookingAdapter, Slot } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import type { Where } from 'payload'
 import { and, create, find, findOne, ownerId } from '../local'
 import type { Doc } from '../mapping/values'

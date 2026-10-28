@@ -1,4 +1,4 @@
-import type { AITool } from '@payload-ai-suite/ai-core'
+import type { AITool } from 'payload-ai-core'
 import type { AssistantToolGroup, ResolvedAssistantOptions } from '../options'
 import { addToCart } from './cart'
 import { checkStock, getOffering, searchOfferingsFallback } from './catalog'

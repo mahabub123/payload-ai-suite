@@ -1,7 +1,7 @@
 import { readFile, stat } from 'node:fs/promises'
 import path from 'node:path'
 import type { Payload } from 'payload'
-import { AIError, getSuiteState, type AICoreOptions, type MessagePart } from '@payload-ai-suite/ai-core'
+import { AIError, getSuiteState, type AICoreOptions, type MessagePart } from 'payload-ai-core'
 import type { AiMediaOptions, ImageSource } from './types'
 
 type AnyRecord = Record<string, any>

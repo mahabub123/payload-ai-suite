@@ -1,5 +1,5 @@
 {
-  "name": "@payload-ai-suite/ai-react",
+  "name": "payload-ai-react",
   "version": "0.1.0",
   "description": "Storefront React components and hooks",
   "type": "module",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "@payload-ai-suite/ai-core": "workspace:*"
+    "payload-ai-core": "workspace:*"
   },
   "repository": {
     "type": "git",

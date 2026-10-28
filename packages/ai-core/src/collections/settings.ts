@@ -101,7 +101,7 @@ export const aiSettingsGlobal = (options: AISettingsGlobalOptions = {}): GlobalC
             : [
                 {
                   label: 'Usage',
-                  fields: [{ name: 'usageDashboard', type: 'ui' as const, admin: { components: { Field: '@payload-ai-suite/ai-core/client#UsageDashboard' } } }],
+                  fields: [{ name: 'usageDashboard', type: 'ui' as const, admin: { components: { Field: 'payload-ai-core/client#UsageDashboard' } } }],
                 },
               ]),
         ],

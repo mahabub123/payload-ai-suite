@@ -1,5 +1,5 @@
 {
-  "name": "@payload-ai-suite/ai-suite",
+  "name": "payload-ai-suite",
   "version": "0.1.0",
   "description": "One-line installer composing the AI Suite plugins",
   "type": "module",
@@ -35,17 +35,17 @@
   },
   "dependencies": {
     "zod": "^4.1.0",
-    "@payload-ai-suite/ai-core": "workspace:*",
-    "@payload-ai-suite/ai-adapters": "workspace:*",
-    "@payload-ai-suite/ai-content": "workspace:*",
-    "@payload-ai-suite/ai-search": "workspace:*",
-    "@payload-ai-suite/ai-assistant": "workspace:*",
-    "@payload-ai-suite/ai-marketing": "workspace:*",
-    "@payload-ai-suite/ai-support": "workspace:*",
-    "@payload-ai-suite/ai-channels": "workspace:*",
-    "@payload-ai-suite/ai-insights": "workspace:*",
-    "@payload-ai-suite/ai-media": "workspace:*",
-    "@payload-ai-suite/ai-copilot": "workspace:*"
+    "payload-ai-core": "workspace:*",
+    "payload-ai-adapters": "workspace:*",
+    "payload-ai-content": "workspace:*",
+    "payload-ai-search": "workspace:*",
+    "payload-ai-assistant": "workspace:*",
+    "payload-ai-marketing": "workspace:*",
+    "payload-ai-support": "workspace:*",
+    "payload-ai-channels": "workspace:*",
+    "payload-ai-insights": "workspace:*",
+    "payload-ai-media": "workspace:*",
+    "payload-ai-copilot": "workspace:*"
   },
   "devDependencies": {
     "payload": "3.92.1"

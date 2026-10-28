@@ -1,4 +1,4 @@
-import type { Card, Money, OfferingSummary } from '@payload-ai-suite/ai-core'
+import type { Card, Money, OfferingSummary } from 'payload-ai-core'
 
 /** Integer minor units -> localized string, using the currency's own fraction digits. */
 export const formatMoney = (m: Money, locale = 'en'): string => {

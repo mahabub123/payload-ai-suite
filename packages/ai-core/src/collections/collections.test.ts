@@ -58,6 +58,6 @@ describe('core-A admin collections', () => {
   it('builds the ai-settings global with the usage dashboard tab', () => {
     const g = aiSettingsGlobal({ knownModules: ['content'] })
     expect(g.slug).toBe('ai-settings')
-    expect(JSON.stringify(g.fields)).toContain('@payload-ai-suite/ai-core/client#UsageDashboard')
+    expect(JSON.stringify(g.fields)).toContain('payload-ai-core/client#UsageDashboard')
   })
 })

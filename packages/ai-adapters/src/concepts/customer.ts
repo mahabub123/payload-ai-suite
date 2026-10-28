@@ -1,4 +1,4 @@
-import type { AdapterContext, Customer, CustomerAdapter } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, Customer, CustomerAdapter } from 'payload-ai-core'
 import { find, findOne, iterateDocs, ownerId } from '../local'
 import type { Doc } from '../mapping/values'
 import { getPath, toIso, toStr } from '../mapping/values'

@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import type { AIContext, AIEndpointDefinition, CoreServices } from '@payload-ai-suite/ai-core'
-import { AIError, getAI } from '@payload-ai-suite/ai-core'
+import type { AIContext, AIEndpointDefinition, CoreServices } from 'payload-ai-core'
+import { AIError, getAI } from 'payload-ai-core'
 import type { TaskConfig as PayloadTaskConfig, Where } from 'payload'
 import { MODULE, SLUGS, TASKS } from '../util'
 import { PROMPTS } from '../prompts'

@@ -1,7 +1,7 @@
 /** In-memory Payload stand-in and ecommerce adapters for ai-assistant tests. */
 import { vi } from 'vitest'
 import type { Payload } from 'payload'
-import type { AdapterSet, Order, Offering } from '@payload-ai-suite/ai-core'
+import type { AdapterSet, Order, Offering } from 'payload-ai-core'
 
 type Doc = Record<string, any>
 

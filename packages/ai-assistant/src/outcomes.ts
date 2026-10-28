@@ -1,5 +1,5 @@
-import { getAI } from '@payload-ai-suite/ai-core'
-import type { CoreServices } from '@payload-ai-suite/ai-core'
+import { getAI } from 'payload-ai-core'
+import type { CoreServices } from 'payload-ai-core'
 import type { Payload, TaskConfig } from 'payload'
 import { getAssistantOptions } from './options'
 import { MODULE } from './state'

@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { defineTool } from '@payload-ai-suite/ai-core'
-import type { ToolContext, Visibility } from '@payload-ai-suite/ai-core'
+import { defineTool } from 'payload-ai-core'
+import type { ToolContext, Visibility } from 'payload-ai-core'
 import { truncate } from '../state'
 
 const visibilityFor = (ctx: ToolContext): Visibility[] => (ctx.actor.customerId ? ['public', 'customers'] : ['public'])

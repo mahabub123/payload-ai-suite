@@ -57,8 +57,8 @@ export type { UsageResponse } from './endpoints'
  * `config.admin.components.views[usageDashboardConfig.viewKey]`.
  */
 export const usageDashboardConfig = {
-  component: '@payload-ai-suite/ai-core/client#UsageDashboard',
+  component: 'payload-ai-core/client#UsageDashboard',
   mountedOn: { global: 'ai-settings', tab: 'Usage', field: 'usageDashboard' },
   viewKey: 'aiUsage',
-  view: { Component: '@payload-ai-suite/ai-core/client#UsageDashboard', path: '/ai-usage', exact: true } satisfies AdminViewConfig,
+  view: { Component: 'payload-ai-core/client#UsageDashboard', path: '/ai-usage', exact: true } satisfies AdminViewConfig,
 } as const

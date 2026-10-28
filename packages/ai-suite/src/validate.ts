@@ -1,4 +1,4 @@
-import type { RoutesOption } from '@payload-ai-suite/ai-core'
+import type { RoutesOption } from 'payload-ai-core'
 import { MODULE_ORDER, type AISuiteOptions, type SuiteModuleKey } from './options'
 
 export class AISuiteConfigError extends Error {

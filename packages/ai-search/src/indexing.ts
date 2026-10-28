@@ -1,6 +1,6 @@
 import type { CollectionAfterChangeHook, CollectionAfterDeleteHook, CollectionConfig, Config, Payload, TaskConfig } from 'payload'
-import type { AIContext, AICoreOptions, CoreServices, Offering, OfferingAdapter, VectorRow } from '@payload-ai-suite/ai-core'
-import { getAI, getSuiteState, indexLocales } from '@payload-ai-suite/ai-core'
+import type { AIContext, AICoreOptions, CoreServices, Offering, OfferingAdapter, VectorRow } from 'payload-ai-core'
+import { getAI, getSuiteState, indexLocales } from 'payload-ai-core'
 import { MODULE, OFFERINGS_TABLE_NAME, TASKS } from './constants'
 import { errMessage } from './db'
 import { offeringToFields } from './vectorTable'

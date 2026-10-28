@@ -1,4 +1,4 @@
-import type { Money } from '@payload-ai-suite/ai-core/wire'
+import type { Money } from 'payload-ai-core/wire'
 
 const digitsCache = new Map<string, number>()
 

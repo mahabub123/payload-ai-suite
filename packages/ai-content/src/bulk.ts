@@ -1,5 +1,5 @@
 import type { Payload, TaskConfig, Where } from 'payload'
-import { AIError, getAI, isAIError, type AIContext, type CoreServices } from '@payload-ai-suite/ai-core'
+import { AIError, getAI, isAIError, type AIContext, type CoreServices } from 'payload-ai-core'
 import { BULK_RUNS, BULK_TASK, GENERATIONS, MODULE } from './constants'
 import { collectionHasDrafts, getFieldInfo, setPath } from './fields'
 import {

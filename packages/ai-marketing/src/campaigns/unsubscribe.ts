@@ -1,7 +1,7 @@
 import { timingSafeEqual } from 'node:crypto'
 import { z } from 'zod'
 import type { Payload, PayloadRequest } from 'payload'
-import type { AIEndpointDefinition, Crypto } from '@payload-ai-suite/ai-core'
+import type { AIEndpointDefinition, Crypto } from 'payload-ai-core'
 import { MODULE, SLUGS, escapeHtml, normEmail } from '../util'
 
 interface TokenBody {

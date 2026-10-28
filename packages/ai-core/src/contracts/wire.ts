@@ -1,5 +1,5 @@
 /**
- * Wire types shared by server endpoints and @payload-ai-suite/ai-react.
+ * Wire types shared by server endpoints and payload-ai-react.
  * Type-only module: no runtime imports, safe for the browser.
  */
 import type { Money, OfferingSummary, OrderSummary, Order, Cart, Slot } from './adapters'

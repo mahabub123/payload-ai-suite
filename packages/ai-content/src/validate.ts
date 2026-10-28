@@ -1,4 +1,4 @@
-import type { Category } from '@payload-ai-suite/ai-core'
+import type { Category } from 'payload-ai-core'
 import { SEO_LIMITS } from './prompts'
 
 /** Cut to `max` characters at a word boundary (no ellipsis — meta tags and fields must stay clean). */

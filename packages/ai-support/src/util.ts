@@ -1,5 +1,5 @@
 import type { Payload, PayloadRequest } from 'payload'
-import { AIError } from '@payload-ai-suite/ai-core'
+import { AIError } from 'payload-ai-core'
 
 export const MODULE = 'support'
 

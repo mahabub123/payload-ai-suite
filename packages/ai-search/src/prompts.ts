@@ -1,4 +1,4 @@
-import type { PromptTemplate } from '@payload-ai-suite/ai-core'
+import type { PromptTemplate } from 'payload-ai-core'
 import { PROMPTS } from './constants'
 
 export const parseFiltersPrompt: PromptTemplate = {

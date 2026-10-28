@@ -1,7 +1,7 @@
 import { randomBytes, randomUUID } from 'node:crypto'
 import type { Payload } from 'payload'
-import type { Card } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { Card } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { IDENTITIES, MESSAGES, TASK_INBOUND, TASK_SEND } from './constants'
 import {
   dbOf,

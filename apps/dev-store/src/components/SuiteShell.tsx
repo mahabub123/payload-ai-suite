@@ -1,5 +1,5 @@
 'use client'
-import { AISuiteProvider, AssistantWidget } from '@payload-ai-suite/ai-react'
+import { AISuiteProvider, AssistantWidget } from 'payload-ai-react'
 import type { ReactNode } from 'react'
 
 /** Client boundary: provider + floating assistant on every storefront page. */

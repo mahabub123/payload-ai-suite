@@ -21,22 +21,22 @@ import { StrikethroughFeatureClient as StrikethroughFeatureClient_e70f5e05f09f93
 import { UnderlineFeatureClient as UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
-import { AIFieldButton as AIFieldButton_cd81282a6687ea7d6a49d7ba4bb168df } from '@payload-ai-suite/ai-content/client'
+import { AIFieldButton as AIFieldButton_cd81282a6687ea7d6a49d7ba4bb168df } from 'payload-ai-content/client'
 import { VariantOptionsSelector as VariantOptionsSelector_b91672ccd6e8b071c11142ab941fedfb } from '@payloadcms/plugin-ecommerce/rsc'
 import { PriceCell as PriceCell_e27bf7b8cc50640dcdd584767b8eac3c } from '@payloadcms/plugin-ecommerce/client'
 import { PriceInput as PriceInput_b91672ccd6e8b071c11142ab941fedfb } from '@payloadcms/plugin-ecommerce/rsc'
-import { AIGeneratePanel as AIGeneratePanel_cd81282a6687ea7d6a49d7ba4bb168df } from '@payload-ai-suite/ai-content/client'
-import { BulkEnrichAction as BulkEnrichAction_cd81282a6687ea7d6a49d7ba4bb168df } from '@payload-ai-suite/ai-content/client'
-import { TicketAIPanel as TicketAIPanel_f31d1e4ef00f7c419967f435e4ea84fb } from '@payload-ai-suite/ai-support/client'
-import { SuggestReplyButton as SuggestReplyButton_f31d1e4ef00f7c419967f435e4ea84fb } from '@payload-ai-suite/ai-support/client'
-import { ProviderTestButton as ProviderTestButton_564924efe79cfe9f6dc7f38bd51e26ac } from '@payload-ai-suite/ai-core/client'
-import { CampaignApproval as CampaignApproval_bbfe908f6708e38b1941f1ee911b6cc2 } from '@payload-ai-suite/ai-marketing/client'
-import { UsageDashboard as UsageDashboard_564924efe79cfe9f6dc7f38bd51e26ac } from '@payload-ai-suite/ai-core/client'
-import { InsightsDashboardPanel as InsightsDashboardPanel_8bd91862aac7500b257353ba45115cae } from '@payload-ai-suite/ai-insights/client'
-import { InsightsNavLink as InsightsNavLink_8bd91862aac7500b257353ba45115cae } from '@payload-ai-suite/ai-insights/client'
-import { CopilotProvider as CopilotProvider_e359cbaba589dbe735e77070be00982c } from '@payload-ai-suite/ai-copilot/client'
-import { BulkReviewView as BulkReviewView_cd81282a6687ea7d6a49d7ba4bb168df } from '@payload-ai-suite/ai-content/client'
-import { InsightsView as InsightsView_8bd91862aac7500b257353ba45115cae } from '@payload-ai-suite/ai-insights/client'
+import { AIGeneratePanel as AIGeneratePanel_cd81282a6687ea7d6a49d7ba4bb168df } from 'payload-ai-content/client'
+import { BulkEnrichAction as BulkEnrichAction_cd81282a6687ea7d6a49d7ba4bb168df } from 'payload-ai-content/client'
+import { TicketAIPanel as TicketAIPanel_f31d1e4ef00f7c419967f435e4ea84fb } from 'payload-ai-support/client'
+import { SuggestReplyButton as SuggestReplyButton_f31d1e4ef00f7c419967f435e4ea84fb } from 'payload-ai-support/client'
+import { ProviderTestButton as ProviderTestButton_564924efe79cfe9f6dc7f38bd51e26ac } from 'payload-ai-core/client'
+import { CampaignApproval as CampaignApproval_bbfe908f6708e38b1941f1ee911b6cc2 } from 'payload-ai-marketing/client'
+import { UsageDashboard as UsageDashboard_564924efe79cfe9f6dc7f38bd51e26ac } from 'payload-ai-core/client'
+import { InsightsDashboardPanel as InsightsDashboardPanel_8bd91862aac7500b257353ba45115cae } from 'payload-ai-insights/client'
+import { InsightsNavLink as InsightsNavLink_8bd91862aac7500b257353ba45115cae } from 'payload-ai-insights/client'
+import { CopilotProvider as CopilotProvider_e359cbaba589dbe735e77070be00982c } from 'payload-ai-copilot/client'
+import { BulkReviewView as BulkReviewView_cd81282a6687ea7d6a49d7ba4bb168df } from 'payload-ai-content/client'
+import { InsightsView as InsightsView_8bd91862aac7500b257353ba45115cae } from 'payload-ai-insights/client'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
 /** @type import('payload').ImportMap */
@@ -64,21 +64,21 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#UnderlineFeatureClient": UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#BoldFeatureClient": BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
-  "@payload-ai-suite/ai-content/client#AIFieldButton": AIFieldButton_cd81282a6687ea7d6a49d7ba4bb168df,
+  "payload-ai-content/client#AIFieldButton": AIFieldButton_cd81282a6687ea7d6a49d7ba4bb168df,
   "@payloadcms/plugin-ecommerce/rsc#VariantOptionsSelector": VariantOptionsSelector_b91672ccd6e8b071c11142ab941fedfb,
   "@payloadcms/plugin-ecommerce/client#PriceCell": PriceCell_e27bf7b8cc50640dcdd584767b8eac3c,
   "@payloadcms/plugin-ecommerce/rsc#PriceInput": PriceInput_b91672ccd6e8b071c11142ab941fedfb,
-  "@payload-ai-suite/ai-content/client#AIGeneratePanel": AIGeneratePanel_cd81282a6687ea7d6a49d7ba4bb168df,
-  "@payload-ai-suite/ai-content/client#BulkEnrichAction": BulkEnrichAction_cd81282a6687ea7d6a49d7ba4bb168df,
-  "@payload-ai-suite/ai-support/client#TicketAIPanel": TicketAIPanel_f31d1e4ef00f7c419967f435e4ea84fb,
-  "@payload-ai-suite/ai-support/client#SuggestReplyButton": SuggestReplyButton_f31d1e4ef00f7c419967f435e4ea84fb,
-  "@payload-ai-suite/ai-core/client#ProviderTestButton": ProviderTestButton_564924efe79cfe9f6dc7f38bd51e26ac,
-  "@payload-ai-suite/ai-marketing/client#CampaignApproval": CampaignApproval_bbfe908f6708e38b1941f1ee911b6cc2,
-  "@payload-ai-suite/ai-core/client#UsageDashboard": UsageDashboard_564924efe79cfe9f6dc7f38bd51e26ac,
-  "@payload-ai-suite/ai-insights/client#InsightsDashboardPanel": InsightsDashboardPanel_8bd91862aac7500b257353ba45115cae,
-  "@payload-ai-suite/ai-insights/client#InsightsNavLink": InsightsNavLink_8bd91862aac7500b257353ba45115cae,
-  "@payload-ai-suite/ai-copilot/client#CopilotProvider": CopilotProvider_e359cbaba589dbe735e77070be00982c,
-  "@payload-ai-suite/ai-content/client#BulkReviewView": BulkReviewView_cd81282a6687ea7d6a49d7ba4bb168df,
-  "@payload-ai-suite/ai-insights/client#InsightsView": InsightsView_8bd91862aac7500b257353ba45115cae,
+  "payload-ai-content/client#AIGeneratePanel": AIGeneratePanel_cd81282a6687ea7d6a49d7ba4bb168df,
+  "payload-ai-content/client#BulkEnrichAction": BulkEnrichAction_cd81282a6687ea7d6a49d7ba4bb168df,
+  "payload-ai-support/client#TicketAIPanel": TicketAIPanel_f31d1e4ef00f7c419967f435e4ea84fb,
+  "payload-ai-support/client#SuggestReplyButton": SuggestReplyButton_f31d1e4ef00f7c419967f435e4ea84fb,
+  "payload-ai-core/client#ProviderTestButton": ProviderTestButton_564924efe79cfe9f6dc7f38bd51e26ac,
+  "payload-ai-marketing/client#CampaignApproval": CampaignApproval_bbfe908f6708e38b1941f1ee911b6cc2,
+  "payload-ai-core/client#UsageDashboard": UsageDashboard_564924efe79cfe9f6dc7f38bd51e26ac,
+  "payload-ai-insights/client#InsightsDashboardPanel": InsightsDashboardPanel_8bd91862aac7500b257353ba45115cae,
+  "payload-ai-insights/client#InsightsNavLink": InsightsNavLink_8bd91862aac7500b257353ba45115cae,
+  "payload-ai-copilot/client#CopilotProvider": CopilotProvider_e359cbaba589dbe735e77070be00982c,
+  "payload-ai-content/client#BulkReviewView": BulkReviewView_cd81282a6687ea7d6a49d7ba4bb168df,
+  "payload-ai-insights/client#InsightsView": InsightsView_8bd91862aac7500b257353ba45115cae,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }

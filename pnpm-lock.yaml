@@ -26,45 +26,6 @@ importers:
 
   apps/dev-services:
     dependencies:
-      '@payload-ai-suite/ai-adapters':
-        specifier: workspace:*
-        version: link:../../packages/ai-adapters
-      '@payload-ai-suite/ai-assistant':
-        specifier: workspace:*
-        version: link:../../packages/ai-assistant
-      '@payload-ai-suite/ai-channels':
-        specifier: workspace:*
-        version: link:../../packages/ai-channels
-      '@payload-ai-suite/ai-content':
-        specifier: workspace:*
-        version: link:../../packages/ai-content
-      '@payload-ai-suite/ai-copilot':
-        specifier: workspace:*
-        version: link:../../packages/ai-copilot
-      '@payload-ai-suite/ai-core':
-        specifier: workspace:*
-        version: link:../../packages/ai-core
-      '@payload-ai-suite/ai-insights':
-        specifier: workspace:*
-        version: link:../../packages/ai-insights
-      '@payload-ai-suite/ai-marketing':
-        specifier: workspace:*
-        version: link:../../packages/ai-marketing
-      '@payload-ai-suite/ai-media':
-        specifier: workspace:*
-        version: link:../../packages/ai-media
-      '@payload-ai-suite/ai-react':
-        specifier: workspace:*
-        version: link:../../packages/ai-react
-      '@payload-ai-suite/ai-search':
-        specifier: workspace:*
-        version: link:../../packages/ai-search
-      '@payload-ai-suite/ai-suite':
-        specifier: workspace:*
-        version: link:../../packages/ai-suite
-      '@payload-ai-suite/ai-support':
-        specifier: workspace:*
-        version: link:../../packages/ai-support
       '@payloadcms/db-postgres':
         specifier: 3.92.1
         version: 3.92.1(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))
@@ -92,6 +53,45 @@ importers:
       payload:
         specifier: 3.92.1
         version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
+      payload-ai-adapters:
+        specifier: workspace:*
+        version: link:../../packages/ai-adapters
+      payload-ai-assistant:
+        specifier: workspace:*
+        version: link:../../packages/ai-assistant
+      payload-ai-channels:
+        specifier: workspace:*
+        version: link:../../packages/ai-channels
+      payload-ai-content:
+        specifier: workspace:*
+        version: link:../../packages/ai-content
+      payload-ai-copilot:
+        specifier: workspace:*
+        version: link:../../packages/ai-copilot
+      payload-ai-core:
+        specifier: workspace:*
+        version: link:../../packages/ai-core
+      payload-ai-insights:
+        specifier: workspace:*
+        version: link:../../packages/ai-insights
+      payload-ai-marketing:
+        specifier: workspace:*
+        version: link:../../packages/ai-marketing
+      payload-ai-media:
+        specifier: workspace:*
+        version: link:../../packages/ai-media
+      payload-ai-react:
+        specifier: workspace:*
+        version: link:../../packages/ai-react
+      payload-ai-search:
+        specifier: workspace:*
+        version: link:../../packages/ai-search
+      payload-ai-suite:
+        specifier: workspace:*
+        version: link:../../packages/ai-suite
+      payload-ai-support:
+        specifier: workspace:*
+        version: link:../../packages/ai-support
       react:
         specifier: ^19.2.0
         version: 19.3.1
@@ -114,45 +114,6 @@ importers:
 
   apps/dev-store:
     dependencies:
-      '@payload-ai-suite/ai-adapters':
-        specifier: workspace:*
-        version: link:../../packages/ai-adapters
-      '@payload-ai-suite/ai-assistant':
-        specifier: workspace:*
-        version: link:../../packages/ai-assistant
-      '@payload-ai-suite/ai-channels':
-        specifier: workspace:*
-        version: link:../../packages/ai-channels
-      '@payload-ai-suite/ai-content':
-        specifier: workspace:*
-        version: link:../../packages/ai-content
-      '@payload-ai-suite/ai-copilot':
-        specifier: workspace:*
-        version: link:../../packages/ai-copilot
-      '@payload-ai-suite/ai-core':
-        specifier: workspace:*
-        version: link:../../packages/ai-core
-      '@payload-ai-suite/ai-insights':
-        specifier: workspace:*
-        version: link:../../packages/ai-insights
-      '@payload-ai-suite/ai-marketing':
-        specifier: workspace:*
-        version: link:../../packages/ai-marketing
-      '@payload-ai-suite/ai-media':
-        specifier: workspace:*
-        version: link:../../packages/ai-media
-      '@payload-ai-suite/ai-react':
-        specifier: workspace:*
-        version: link:../../packages/ai-react
-      '@payload-ai-suite/ai-search':
-        specifier: workspace:*
-        version: link:../../packages/ai-search
-      '@payload-ai-suite/ai-suite':
-        specifier: workspace:*
-        version: link:../../packages/ai-suite
-      '@payload-ai-suite/ai-support':
-        specifier: workspace:*
-        version: link:../../packages/ai-support
       '@payloadcms/db-postgres':
         specifier: 3.92.1
         version: 3.92.1(payload@3.92.1(graphql@16.14.2)(typescript@5.9.3))
@@ -183,6 +144,45 @@ importers:
       payload:
         specifier: 3.92.1
         version: 3.92.1(graphql@16.14.2)(typescript@5.9.3)
+      payload-ai-adapters:
+        specifier: workspace:*
+        version: link:../../packages/ai-adapters
+      payload-ai-assistant:
+        specifier: workspace:*
+        version: link:../../packages/ai-assistant
+      payload-ai-channels:
+        specifier: workspace:*
+        version: link:../../packages/ai-channels
+      payload-ai-content:
+        specifier: workspace:*
+        version: link:../../packages/ai-content
+      payload-ai-copilot:
+        specifier: workspace:*
+        version: link:../../packages/ai-copilot
+      payload-ai-core:
+        specifier: workspace:*
+        version: link:../../packages/ai-core
+      payload-ai-insights:
+        specifier: workspace:*
+        version: link:../../packages/ai-insights
+      payload-ai-marketing:
+        specifier: workspace:*
+        version: link:../../packages/ai-marketing
+      payload-ai-media:
+        specifier: workspace:*
+        version: link:../../packages/ai-media
+      payload-ai-react:
+        specifier: workspace:*
+        version: link:../../packages/ai-react
+      payload-ai-search:
+        specifier: workspace:*
+        version: link:../../packages/ai-search
+      payload-ai-suite:
+        specifier: workspace:*
+        version: link:../../packages/ai-suite
+      payload-ai-support:
+        specifier: workspace:*
+        version: link:../../packages/ai-support
       react:
         specifier: ^19.2.0
         version: 19.3.1
@@ -205,7 +205,7 @@ importers:
 
   packages/ai-adapters:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       zod:
@@ -221,7 +221,7 @@ importers:
 
   packages/ai-assistant:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       zod:
@@ -234,10 +234,10 @@ importers:
 
   packages/ai-channels:
     dependencies:
-      '@payload-ai-suite/ai-assistant':
+      payload-ai-assistant:
         specifier: workspace:*
         version: link:../ai-assistant
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       zod:
@@ -250,7 +250,7 @@ importers:
 
   packages/ai-content:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       react:
@@ -272,7 +272,7 @@ importers:
 
   packages/ai-copilot:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       react:
@@ -343,7 +343,7 @@ importers:
 
   packages/ai-insights:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       react:
@@ -362,7 +362,7 @@ importers:
 
   packages/ai-marketing:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       react:
@@ -381,7 +381,7 @@ importers:
 
   packages/ai-media:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       zod:
@@ -394,7 +394,7 @@ importers:
 
   packages/ai-react:
     devDependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       react:
@@ -406,7 +406,7 @@ importers:
 
   packages/ai-search:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       zod:
@@ -419,37 +419,37 @@ importers:
 
   packages/ai-suite:
     dependencies:
-      '@payload-ai-suite/ai-adapters':
+      payload-ai-adapters:
         specifier: workspace:*
         version: link:../ai-adapters
-      '@payload-ai-suite/ai-assistant':
+      payload-ai-assistant:
         specifier: workspace:*
         version: link:../ai-assistant
-      '@payload-ai-suite/ai-channels':
+      payload-ai-channels:
         specifier: workspace:*
         version: link:../ai-channels
-      '@payload-ai-suite/ai-content':
+      payload-ai-content:
         specifier: workspace:*
         version: link:../ai-content
-      '@payload-ai-suite/ai-copilot':
+      payload-ai-copilot:
         specifier: workspace:*
         version: link:../ai-copilot
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
-      '@payload-ai-suite/ai-insights':
+      payload-ai-insights:
         specifier: workspace:*
         version: link:../ai-insights
-      '@payload-ai-suite/ai-marketing':
+      payload-ai-marketing:
         specifier: workspace:*
         version: link:../ai-marketing
-      '@payload-ai-suite/ai-media':
+      payload-ai-media:
         specifier: workspace:*
         version: link:../ai-media
-      '@payload-ai-suite/ai-search':
+      payload-ai-search:
         specifier: workspace:*
         version: link:../ai-search
-      '@payload-ai-suite/ai-support':
+      payload-ai-support:
         specifier: workspace:*
         version: link:../ai-support
       zod:
@@ -462,7 +462,7 @@ importers:
 
   packages/ai-support:
     dependencies:
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../ai-core
       react:
@@ -481,19 +481,19 @@ importers:
 
   tooling:
     dependencies:
-      '@payload-ai-suite/ai-adapters':
+      payload-ai-adapters:
         specifier: workspace:*
         version: link:../packages/ai-adapters
-      '@payload-ai-suite/ai-assistant':
+      payload-ai-assistant:
         specifier: workspace:*
         version: link:../packages/ai-assistant
-      '@payload-ai-suite/ai-content':
+      payload-ai-content:
         specifier: workspace:*
         version: link:../packages/ai-content
-      '@payload-ai-suite/ai-core':
+      payload-ai-core:
         specifier: workspace:*
         version: link:../packages/ai-core
-      '@payload-ai-suite/ai-search':
+      payload-ai-search:
         specifier: workspace:*
         version: link:../packages/ai-search
       zod:

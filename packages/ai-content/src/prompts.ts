@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { PromptTemplate, TaskClass } from '@payload-ai-suite/ai-core'
+import type { PromptTemplate, TaskClass } from 'payload-ai-core'
 import type { ContentAction } from './types'
 
 /* ---------- locale helpers ---------- */

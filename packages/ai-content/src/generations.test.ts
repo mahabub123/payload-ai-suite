@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { collect } from '@payload-ai-suite/ai-core/testing'
-import { createFakeServices } from '@payload-ai-suite/ai-core/testing'
+import { collect } from 'payload-ai-core/testing'
+import { createFakeServices } from 'payload-ai-core/testing'
 import { createHarness } from '../test/setup'
 import { GENERATIONS } from './constants'
 

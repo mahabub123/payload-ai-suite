@@ -1,5 +1,5 @@
 {
-  "name": "@payload-ai-suite/ai-content",
+  "name": "payload-ai-content",
   "version": "0.1.0",
   "description": "Catalog & Content Studio",
   "type": "module",
@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "zod": "^4.1.0",
-    "@payload-ai-suite/ai-core": "workspace:*"
+    "payload-ai-core": "workspace:*"
   },
   "peerDependencies": {
     "@payloadcms/ui": "^3.92.1",

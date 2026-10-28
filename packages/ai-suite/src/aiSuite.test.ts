@@ -19,17 +19,17 @@ const h = vi.hoisted(() => {
   return { created, fakePlugin, adapterProvider, createAdapters: vi.fn(() => adapterProvider) }
 })
 
-vi.mock('@payload-ai-suite/ai-core', () => ({ aiCore: h.fakePlugin('core') }))
-vi.mock('@payload-ai-suite/ai-adapters', () => ({ createAdapters: h.createAdapters }))
-vi.mock('@payload-ai-suite/ai-content', () => ({ aiContent: h.fakePlugin('content') }))
-vi.mock('@payload-ai-suite/ai-search', () => ({ aiSearch: h.fakePlugin('search') }))
-vi.mock('@payload-ai-suite/ai-assistant', () => ({ aiAssistant: h.fakePlugin('assistant') }))
-vi.mock('@payload-ai-suite/ai-marketing', () => ({ aiMarketing: h.fakePlugin('marketing') }))
-vi.mock('@payload-ai-suite/ai-support', () => ({ aiSupport: h.fakePlugin('support') }))
-vi.mock('@payload-ai-suite/ai-channels', () => ({ aiChannels: h.fakePlugin('channels') }))
-vi.mock('@payload-ai-suite/ai-insights', () => ({ aiInsights: h.fakePlugin('insights') }))
-vi.mock('@payload-ai-suite/ai-media', () => ({ aiMedia: h.fakePlugin('media') }))
-vi.mock('@payload-ai-suite/ai-copilot', () => ({ aiCopilot: h.fakePlugin('copilot') }))
+vi.mock('payload-ai-core', () => ({ aiCore: h.fakePlugin('core') }))
+vi.mock('payload-ai-adapters', () => ({ createAdapters: h.createAdapters }))
+vi.mock('payload-ai-content', () => ({ aiContent: h.fakePlugin('content') }))
+vi.mock('payload-ai-search', () => ({ aiSearch: h.fakePlugin('search') }))
+vi.mock('payload-ai-assistant', () => ({ aiAssistant: h.fakePlugin('assistant') }))
+vi.mock('payload-ai-marketing', () => ({ aiMarketing: h.fakePlugin('marketing') }))
+vi.mock('payload-ai-support', () => ({ aiSupport: h.fakePlugin('support') }))
+vi.mock('payload-ai-channels', () => ({ aiChannels: h.fakePlugin('channels') }))
+vi.mock('payload-ai-insights', () => ({ aiInsights: h.fakePlugin('insights') }))
+vi.mock('payload-ai-media', () => ({ aiMedia: h.fakePlugin('media') }))
+vi.mock('payload-ai-copilot', () => ({ aiCopilot: h.fakePlugin('copilot') }))
 
 import { aiSuite } from './aiSuite'
 import type { AISuiteOptions } from './options'

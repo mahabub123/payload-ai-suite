@@ -2,8 +2,8 @@
  * Merge preset defaults with site overrides (config time), then resolve them against payload.config
  * (init time): pick existing collections, check every field path, build Targets and validation results.
  */
-import type { AdapterValidationResult, ConceptName } from '@payload-ai-suite/ai-core'
-import { CONCEPTS } from '@payload-ai-suite/ai-core'
+import type { AdapterValidationResult, ConceptName } from 'payload-ai-core'
+import { CONCEPTS } from 'payload-ai-core'
 import type { Where } from 'payload'
 import type { PublishedRule, Target } from './local'
 import type { CollectionLike, ConfigLike } from './mapping/schema'

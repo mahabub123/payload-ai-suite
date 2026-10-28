@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import type { ReactNode } from 'react'
-import type { OfferingSummary } from '@payload-ai-suite/ai-core/wire'
+import type { OfferingSummary } from 'payload-ai-core/wire'
 import { useSearch } from '../hooks/useSearch'
 import type { UseSearchOptions } from '../hooks/useSearch'
 import { useSearchEvents } from '../hooks/useSearchEvents'

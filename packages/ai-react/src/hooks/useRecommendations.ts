@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import type { OfferingSummary, RecsResponse } from '@payload-ai-suite/ai-core/wire'
+import type { OfferingSummary, RecsResponse } from 'payload-ai-core/wire'
 import { useAISuite } from '../provider'
 
 export interface UseRecommendationsOptions {

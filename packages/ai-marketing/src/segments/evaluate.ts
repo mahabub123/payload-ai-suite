@@ -1,5 +1,5 @@
-import type { AdapterContext, AdapterSet, Customer, Order } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, AdapterSet, Customer, Order } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { DAY_MS, maskEmail, normEmail } from '../util'
 import type { Comparison, SegmentCondition, SegmentDefinition } from './schema'
 

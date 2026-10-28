@@ -8,8 +8,8 @@ import type {
   CoreServices,
   PromptTemplate,
   StreamWireEvent,
-} from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+} from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { checkNumbers, collectEvidence, stripNumbers } from './numbers'
 import { periodSchema, resolvePeriod, periodJSON, type ResolvedPeriod } from './period'
 import { saveReport } from './reports'

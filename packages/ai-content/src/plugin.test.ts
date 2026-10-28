@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Config } from 'payload'
-import { SUITE_KEY } from '@payload-ai-suite/ai-core'
+import { SUITE_KEY } from 'payload-ai-core'
 import { aiContent } from './index'
 
 const baseConfig = (): Config =>
@@ -49,7 +49,7 @@ describe('aiContent plugin config', () => {
     const [title, slug, description, tabs] = products.fields as any[]
     expect(comps(title)).toHaveLength(2)
     expect(comps(title)[0]).toBe('./Existing#Comp')
-    expect(comps(title)[1].path).toBe('@payload-ai-suite/ai-content/client#AIFieldButton')
+    expect(comps(title)[1].path).toBe('payload-ai-content/client#AIFieldButton')
     expect(comps(title)[1].clientProps).toMatchObject({ collection: 'products', field: 'title', fieldType: 'text' })
     expect(comps(slug)).toHaveLength(0)
     expect(comps(description)[0].clientProps.fieldType).toBe('richText')
@@ -58,7 +58,7 @@ describe('aiContent plugin config', () => {
     const panel = (products.fields as any[]).find((f) => f.name === 'aiContentPanel')
     expect(panel.type).toBe('ui')
     expect(panel.admin.components.Field.clientProps.categoryField).toBe('categories')
-    expect((products.admin?.components?.beforeListTable as any[])[0].path).toBe('@payload-ai-suite/ai-content/client#BulkEnrichAction')
+    expect((products.admin?.components?.beforeListTable as any[])[0].path).toBe('payload-ai-content/client#BulkEnrichAction')
     // non-offering collections untouched without an override
     const posts = c.collections!.find((x) => x.slug === 'posts')!
     expect(comps((posts.fields as any[])[0])).toHaveLength(0)

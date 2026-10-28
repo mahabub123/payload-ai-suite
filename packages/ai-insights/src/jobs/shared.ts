@@ -1,6 +1,6 @@
 import type { Payload } from 'payload'
-import type { AICoreOptions } from '@payload-ai-suite/ai-core'
-import { getSuiteState } from '@payload-ai-suite/ai-core'
+import type { AICoreOptions } from 'payload-ai-core'
+import { getSuiteState } from 'payload-ai-core'
 import { collectionExists } from '../data'
 
 /** Tenants to run a job for: every tenant when Multi-Tenant is configured, else a single global run. */

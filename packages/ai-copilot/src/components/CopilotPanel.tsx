@@ -1,6 +1,6 @@
 'use client'
 import React, { useRef, useState } from 'react'
-import type { Card } from '@payload-ai-suite/ai-core/wire'
+import type { Card } from 'payload-ai-core/wire'
 import { DiffViewer } from './DiffViewer'
 import { postSSE } from './sse'
 

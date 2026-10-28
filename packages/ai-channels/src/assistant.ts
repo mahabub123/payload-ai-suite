@@ -1,5 +1,5 @@
-import type { AIContext, StreamWireEvent } from '@payload-ai-suite/ai-core'
-import { runAssistantTurn } from '@payload-ai-suite/ai-assistant'
+import type { AIContext, StreamWireEvent } from 'payload-ai-core'
+import { runAssistantTurn } from 'payload-ai-assistant'
 
 export interface AssistantTurnArgs {
   ctx: AIContext

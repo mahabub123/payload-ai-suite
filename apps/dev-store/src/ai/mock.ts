@@ -1,5 +1,5 @@
-import type { AIProvider, ChatRequest, ChatResult, StreamEvent } from '@payload-ai-suite/ai-suite'
-import { createMockProvider } from '@payload-ai-suite/ai-core/testing'
+import type { AIProvider, ChatRequest, ChatResult, StreamEvent } from 'payload-ai-suite'
+import { createMockProvider } from 'payload-ai-core/testing'
 
 const textOf = (content: ChatRequest['messages'][number]['content']): string =>
   typeof content === 'string' ? content : content.map((p) => (p.type === 'text' ? p.text : '')).join(' ')

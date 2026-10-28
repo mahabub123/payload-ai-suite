@@ -1,10 +1,10 @@
-# @payload-ai-suite/ai-marketing
+# payload-ai-marketing
 
 Marketing & email module (design doc §10.4): AI segments, AI-drafted campaigns and triggered sequences, human approval, idempotent sending with unsubscribe handling, and social copy within platform limits.
 
 ```ts
-import { aiCore } from '@payload-ai-suite/ai-core'
-import { aiMarketing } from '@payload-ai-suite/ai-marketing'
+import { aiCore } from 'payload-ai-core'
+import { aiMarketing } from 'payload-ai-marketing'
 
 plugins: [
   aiCore({ /* … */ }),
@@ -49,4 +49,4 @@ Requires the `customer` and `order` concepts; `offering`, `category` and `cart` 
 - `ai-marketing-segment-refresh` (daily) — recomputes size + sample.
 
 ## Admin UI
-`CampaignApproval` (`@payload-ai-suite/ai-marketing/client`) is mounted in the `ai-campaigns` edit view (`beforeDocumentControls`): subject-variant picker per step, sandboxed HTML preview, optional schedule, approve and pause.
+`CampaignApproval` (`payload-ai-marketing/client`) is mounted in the `ai-campaigns` edit view (`beforeDocumentControls`): subject-variant picker per step, sandboxed HTML preview, optional schedule, approve and pause.

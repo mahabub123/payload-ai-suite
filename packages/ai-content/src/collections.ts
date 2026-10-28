@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { access } from '@payload-ai-suite/ai-core'
+import { access } from 'payload-ai-core'
 import { BULK_RUNS, GENERATIONS } from './constants'
 import { CONTENT_ACTIONS } from './types'
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Config } from 'payload'
-import { SUITE_KEY } from '@payload-ai-suite/ai-core'
+import { SUITE_KEY } from 'payload-ai-core'
 import { aiMarketing } from './index'
 
 const base = (): Config =>
@@ -22,7 +22,7 @@ describe('aiMarketing plugin', () => {
     expect(paths).toContain('post /ai/marketing/campaigns/:id/approve')
     expect(paths).toContain('get /ai/marketing/unsubscribe')
     const campaigns = cfg.collections!.find((c) => c.slug === 'ai-campaigns')!
-    expect(campaigns.admin!.components!.edit!.beforeDocumentControls).toEqual(['@payload-ai-suite/ai-marketing/client#CampaignApproval'])
+    expect(campaigns.admin!.components!.edit!.beforeDocumentControls).toEqual(['payload-ai-marketing/client#CampaignApproval'])
     const drafts = cfg.collections!.find((c) => c.slug === 'ai-email-drafts')!
     expect(drafts.fields.find((f) => 'name' in f && f.name === 'idempotencyKey')).toMatchObject({ unique: true })
     const mod = (cfg.custom as Record<string, any>)[SUITE_KEY].modules[0]

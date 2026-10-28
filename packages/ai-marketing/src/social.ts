@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import type { AIEndpointDefinition } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AIEndpointDefinition } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { MODULE, formatMoney } from './util'
 import { PROMPTS } from './prompts'
 

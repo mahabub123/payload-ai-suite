@@ -1,6 +1,6 @@
 import type { Config } from 'payload'
-import type { AICoreOptions, SuiteRole } from '@payload-ai-suite/ai-core'
-import { getSuiteState } from '@payload-ai-suite/ai-core'
+import type { AICoreOptions, SuiteRole } from 'payload-ai-core'
+import { getSuiteState } from 'payload-ai-core'
 
 export interface AiCopilotOptions {
   /** Event/schedule-driven AI workflows. Default true. */

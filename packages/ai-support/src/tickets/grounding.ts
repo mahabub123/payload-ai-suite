@@ -1,4 +1,4 @@
-import type { AIContext, Citation, CoreServices, KnowledgeHit, Order } from '@payload-ai-suite/ai-core'
+import type { AIContext, Citation, CoreServices, KnowledgeHit, Order } from 'payload-ai-core'
 import type { TicketDoc } from '../util'
 
 export interface Grounding {

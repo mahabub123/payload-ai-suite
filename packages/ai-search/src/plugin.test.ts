@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Config } from 'payload'
-import { createFakeServices } from '@payload-ai-suite/ai-core/testing'
+import { createFakeServices } from 'payload-ai-core/testing'
 import { aiSearch, searchModuleDefinition } from './plugin'
 import { indexOfferings } from './indexing'
 import { createOfferingAdapter, createPayloadStub, product } from './test/helpers'

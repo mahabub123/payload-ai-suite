@@ -1,6 +1,6 @@
 import type { CollectionAfterChangeHook, CollectionConfig, Config, Field } from 'payload'
-import { getSuiteState } from '@payload-ai-suite/ai-core'
-import type { AICoreOptions } from '@payload-ai-suite/ai-core'
+import { getSuiteState } from 'payload-ai-core'
+import type { AICoreOptions } from 'payload-ai-core'
 import type { ResolvedSupportOptions } from './options'
 import { INTERNAL, SLUGS, TASKS, queueJob, relId } from './util'
 
@@ -11,7 +11,7 @@ export const ticketExtraFields: Field[] = [
   {
     name: 'aiSupportPanel',
     type: 'ui',
-    admin: { components: { Field: '@payload-ai-suite/ai-support/client#TicketAIPanel' } },
+    admin: { components: { Field: 'payload-ai-support/client#TicketAIPanel' } },
   },
   {
     name: 'replies',
@@ -66,7 +66,7 @@ export const extendTickets = (c: CollectionConfig): CollectionConfig => {
           ...components?.edit,
           beforeDocumentControls: [
             ...(components?.edit?.beforeDocumentControls ?? []),
-            '@payload-ai-suite/ai-support/client#SuggestReplyButton',
+            'payload-ai-support/client#SuggestReplyButton',
           ],
         },
       },

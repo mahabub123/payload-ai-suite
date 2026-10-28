@@ -1,9 +1,9 @@
-# @payload-ai-suite/ai-channels
+# payload-ai-channels
 
 The same shopping assistant on **WhatsApp Business**, **Facebook Messenger** and **email**, with one history per customer.
 
 ```ts
-import { aiChannels, type AiChannelsOptions } from '@payload-ai-suite/ai-channels'
+import { aiChannels, type AiChannelsOptions } from 'payload-ai-channels'
 
 plugins: [
   aiCore({ ... }),
@@ -36,7 +36,7 @@ Every channel is optional; pass `false` or leave it out to switch it off.
    - actor `{ kind: 'channel', roles: [], channel: { name, externalIdHash, verified }, customerId? }`
    - surface `'channel'`
 
-   It runs `runAssistantTurn` from `@payload-ai-suite/ai-assistant`, using one conversation per identity. For email, the
+   It runs `runAssistantTurn` from `payload-ai-assistant`, using one conversation per identity. For email, the
    conversation is one per thread. The module budget is checked for each message. When the budget is spent, the user gets
    a polite "busy" reply. Channel actors have no suite roles, so staff-tier tools are never offered to them.
 3. **`ai-channels-send` job.** It joins the assistant's text with the cards rendered as plain text. Prices, stock and

@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server'
 import { AISuiteProvider } from './provider'
 import { AssistantWidget } from './components/AssistantWidget'
 import { CardView } from './components/cards'
-import type { Card } from '@payload-ai-suite/ai-core/wire'
+import type { Card } from 'payload-ai-core/wire'
 
 const cards: Card[] = [
   { type: 'products', items: [{ id: 'p1', title: 'Red <b>Dress</b>', price: { amount: 250000, currency: 'BDT' }, inStock: true, stock: 3, categoryIds: [], url: '/p/1' }] },

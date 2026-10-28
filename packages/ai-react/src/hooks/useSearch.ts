@@ -1,6 +1,6 @@
 'use client'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { SearchResponse } from '@payload-ai-suite/ai-core/wire'
+import type { SearchResponse } from 'payload-ai-core/wire'
 import { useAISuite } from '../provider'
 
 export interface UseSearchOptions {

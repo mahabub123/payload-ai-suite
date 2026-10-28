@@ -1,5 +1,5 @@
 import type { CollectionBeforeChangeHook, CollectionConfig, Field } from 'payload'
-import { access } from '@payload-ai-suite/ai-core'
+import { access } from 'payload-ai-core'
 import type { ResolvedMarketingOptions } from './options'
 import { SLUGS, userId } from './util'
 import { approvalHash } from './campaigns/send'
@@ -60,7 +60,7 @@ export const campaignsCollection = (o: ResolvedMarketingOptions): CollectionConf
     useAsTitle: 'name',
     defaultColumns: ['name', 'kind', 'status', 'approvedAt'],
     components: {
-      edit: { beforeDocumentControls: ['@payload-ai-suite/ai-marketing/client#CampaignApproval'] },
+      edit: { beforeDocumentControls: ['payload-ai-marketing/client#CampaignApproval'] },
     },
   },
   access: { read: access.staff, create: access.staff, update: access.staff, delete: access.roles(o.approvalRole) },

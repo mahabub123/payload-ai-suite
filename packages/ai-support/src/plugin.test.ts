@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import type { CollectionAfterChangeHook, Config } from 'payload'
-import { SUITE_KEY } from '@payload-ai-suite/ai-core'
+import { SUITE_KEY } from 'payload-ai-core'
 import { aiSupport } from './index'
 import { queueTriageHook } from './extend'
 
@@ -32,7 +32,7 @@ describe('aiSupport plugin', () => {
     expect(tickets.hooks!.afterChange).toEqual([existingHook, queueTriageHook])
     const names = tickets.fields.map((f) => ('name' in f ? f.name : ''))
     expect(names).toEqual(expect.arrayContaining(['subject', 'replies', 'triagedAt', 'triageConfidence', 'aiSupportPanel']))
-    expect(tickets.admin!.components!.edit!.beforeDocumentControls).toEqual(['@payload-ai-suite/ai-support/client#SuggestReplyButton'])
+    expect(tickets.admin!.components!.edit!.beforeDocumentControls).toEqual(['payload-ai-support/client#SuggestReplyButton'])
     const reviews = cfg.collections!.find((c) => c.slug === 'reviews')!
     expect(reviews.hooks!.afterChange).toHaveLength(2)
     expect(reviews.hooks!.afterChange![0]).toBe(existingHook)

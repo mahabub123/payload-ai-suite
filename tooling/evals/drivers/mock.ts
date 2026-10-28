@@ -4,7 +4,7 @@
  * (fake embeddings + keyword, RRF), template content. Used in CI to validate goldens, scorers and the
  * runner, and as the "mock" baseline route.
  */
-import { fakeEmbedding } from '@payload-ai-suite/ai-core/testing'
+import { fakeEmbedding } from 'payload-ai-core/testing'
 import { categories, isInStock, knowledge, orders, productBySlug, products } from '../lib/fixtures'
 import { normalize } from '../lib/scoring'
 import type { AssistantCase, AssistantOutput, ContentCase, ContentOutput, Driver, Locale, SearchCase, SearchOutput } from '../lib/types'

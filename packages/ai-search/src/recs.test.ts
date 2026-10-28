@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { createFakeServices, createTestContext } from '@payload-ai-suite/ai-core/testing'
+import { createFakeServices, createTestContext } from 'payload-ai-core/testing'
 import { createSearchEngine } from './engine'
 import { indexOfferings } from './indexing'
 import { analyzeEvents, runLearningReport } from './learning'
@@ -38,7 +38,7 @@ describe('co-occurrence', () => {
     const task = cooccurrenceTask({ days: 180, top: 12 })
     const handler = task.handler as (a: any) => Promise<{ output: { offerings: number } }>
     // the job resolves services through getAI(); register the fake for this payload
-    const { setAI } = await import('@payload-ai-suite/ai-core')
+    const { setAI } = await import('payload-ai-core')
     setAI(payload, services)
     const out = await handler({ input: {}, req: { payload } })
     expect(out.output.offerings).toBe(3)

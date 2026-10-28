@@ -1,4 +1,4 @@
-import type { StreamWireEvent } from '@payload-ai-suite/ai-core/wire'
+import type { StreamWireEvent } from 'payload-ai-core/wire'
 
 export interface SSEMessage {
   event: string

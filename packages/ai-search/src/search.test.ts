@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { AIError } from '@payload-ai-suite/ai-core'
-import { createFakeServices, createTestContext, createToolContext } from '@payload-ai-suite/ai-core/testing'
+import { AIError } from 'payload-ai-core'
+import { createFakeServices, createTestContext, createToolContext } from 'payload-ai-core/testing'
 import { createSearchEngine } from './engine'
 import { indexOfferings, reindexAll } from './indexing'
 import type { AiSearchOptions } from './options'

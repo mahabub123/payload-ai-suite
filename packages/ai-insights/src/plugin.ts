@@ -1,7 +1,7 @@
 import type { Config, Plugin, TaskConfig } from 'payload'
 
 type ScheduleConfig = NonNullable<TaskConfig['schedule']>[number]
-import { createAIModulePlugin, getAI } from '@payload-ai-suite/ai-core'
+import { createAIModulePlugin, getAI } from 'payload-ai-core'
 import { askEndpoint, insightsPrompts } from './ask'
 import { reportsCollection } from './collections'
 import { ANOMALY_TASK, runAnomalies } from './jobs/anomalies'
@@ -9,9 +9,9 @@ import { BRIEFING_TASK, runBriefing } from './jobs/briefing'
 import { buildMetricTools } from './metrics/tools'
 import { resolveInsightsOptions, type AiInsightsOptions, type ResolvedInsightsOptions } from './options'
 
-export const INSIGHTS_VIEW_PATH = '@payload-ai-suite/ai-insights/client#InsightsView'
-export const INSIGHTS_NAV_PATH = '@payload-ai-suite/ai-insights/client#InsightsNavLink'
-export const INSIGHTS_PANEL_PATH = '@payload-ai-suite/ai-insights/client#InsightsDashboardPanel'
+export const INSIGHTS_VIEW_PATH = 'payload-ai-insights/client#InsightsView'
+export const INSIGHTS_NAV_PATH = 'payload-ai-insights/client#InsightsNavLink'
+export const INSIGHTS_PANEL_PATH = 'payload-ai-insights/client#InsightsDashboardPanel'
 
 /** Each schedule passes its briefing kind as job input; runs are idempotent per period (dedupeKey). */
 const briefingSchedule = (cron: string, kind: 'daily' | 'weekly'): ScheduleConfig => ({

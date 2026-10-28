@@ -8,7 +8,7 @@ import type {
   OfferingQuery,
   OfferingSummary,
   OfferingVariant,
-} from '@payload-ai-suite/ai-core'
+} from 'payload-ai-core'
 import type { Where } from 'payload'
 import { and, find, findOne, iterateDocs } from '../local'
 import type { Doc } from '../mapping/values'

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { AIEndpointDefinition, AITool } from '@payload-ai-suite/ai-core'
+import type { AIEndpointDefinition, AITool } from 'payload-ai-core'
 import { applyChangeset, discardChangeset } from './changesets'
 import { copilotChat } from './chat'
 import { decideRun } from './automations/runner'

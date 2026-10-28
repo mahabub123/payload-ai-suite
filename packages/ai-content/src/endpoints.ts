@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import type { PayloadRequest } from 'payload'
-import { AIError, type AIContext, type AIEndpointDefinition, type CoreServices } from '@payload-ai-suite/ai-core'
+import { AIError, type AIContext, type AIEndpointDefinition, type CoreServices } from 'payload-ai-core'
 import { applyBulkReview, createBulkRun, getBulkReview } from './bulk'
 import { GENERATIONS, MODULE } from './constants'
 import { getFieldInfo } from './fields'

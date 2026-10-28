@@ -1,5 +1,5 @@
-import { createAIModulePlugin } from '@payload-ai-suite/ai-core'
-import type { AIModuleDefinition } from '@payload-ai-suite/ai-core'
+import { createAIModulePlugin } from 'payload-ai-core'
+import type { AIModuleDefinition } from 'payload-ai-core'
 import type { Plugin } from 'payload'
 import { assistantEndpoints } from './endpoints'
 import { resolveOptions, setAssistantOptions } from './options'

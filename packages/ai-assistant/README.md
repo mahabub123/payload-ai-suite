@@ -1,9 +1,9 @@
-# @payload-ai-suite/ai-assistant
+# payload-ai-assistant
 
 Website sales & support assistant for Payload CMS v3 (design doc §10.1). Requires `aiCore()` before it in `plugins[]` (or use `aiSuite({ modules: { assistant: {...} } })`).
 
 ```ts
-import { aiAssistant } from '@payload-ai-suite/ai-assistant'
+import { aiAssistant } from 'payload-ai-assistant'
 
 plugins: [
   aiCore({ ... }),
@@ -51,7 +51,7 @@ Order tools never reveal another customer's order: they go through `getForCustom
 ## Reusing the turn (ai-channels)
 
 ```ts
-import { runAssistantTurn } from '@payload-ai-suite/ai-assistant'
+import { runAssistantTurn } from 'payload-ai-assistant'
 
 for await (const ev of runAssistantTurn({ ctx, conversationId, message, page, channel: 'whatsapp' })) { ... }
 ```

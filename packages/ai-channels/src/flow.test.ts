@@ -1,9 +1,9 @@
 import { createHash } from 'node:crypto'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { z } from 'zod'
-import type { AIContext, AITool, Card, StreamWireEvent } from '@payload-ai-suite/ai-core'
-import { createFakeServices, createToolContext } from '@payload-ai-suite/ai-core/testing'
-import { runAssistantTurn } from '@payload-ai-suite/ai-assistant'
+import type { AIContext, AITool, Card, StreamWireEvent } from 'payload-ai-core'
+import { createFakeServices, createToolContext } from 'payload-ai-core/testing'
+import { runAssistantTurn } from 'payload-ai-assistant'
 import { IDENTITIES, MESSAGES, TASK_INBOUND, TASK_SEND } from './constants'
 import { createDrivers } from './drivers'
 import { hmacSha256Hex } from './drivers/signature'
@@ -15,7 +15,7 @@ import { buildChannelContext, createRuntime, type ChannelRuntime } from './runti
 import { createFakePayload } from './testing/fakePayload'
 import { createWebhookEndpoints } from './endpoints'
 
-vi.mock('@payload-ai-suite/ai-assistant', () => ({ runAssistantTurn: vi.fn() }))
+vi.mock('payload-ai-assistant', () => ({ runAssistantTurn: vi.fn() }))
 const turnMock = vi.mocked(runAssistantTurn)
 
 const ENV = {
@@ -192,7 +192,7 @@ describe('inbound -> assistant -> send', () => {
   it('answers with a busy message when the budget is spent (no assistant call)', async () => {
     const s = setup()
     s.services.budgets.assert = async () => {
-      const { AIError } = await import('@payload-ai-suite/ai-core')
+      const { AIError } = await import('payload-ai-core')
       throw new AIError('budget_exceeded', 'spent')
     }
     await deliver(s, 'w1', 'hi')

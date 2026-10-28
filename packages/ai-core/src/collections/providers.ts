@@ -58,7 +58,7 @@ export const aiProvidersCollection = (options?: AICoreOptions): CollectionConfig
       {
         name: 'testConnection',
         type: 'ui',
-        admin: { position: 'sidebar', components: { Field: '@payload-ai-suite/ai-core/client#ProviderTestButton' } },
+        admin: { position: 'sidebar', components: { Field: 'payload-ai-core/client#ProviderTestButton' } },
       },
     ],
     hooks: {

@@ -1,5 +1,5 @@
 import type { CollectionConfig, Field } from 'payload'
-import { access } from '@payload-ai-suite/ai-core'
+import { access } from 'payload-ai-core'
 import { SLUGS } from './constants'
 
 const group = 'AI Suite'

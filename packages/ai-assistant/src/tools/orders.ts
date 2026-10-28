@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { AIError, defineTool } from '@payload-ai-suite/ai-core'
-import type { AdapterContext, Order, ToolContext, ToolResult } from '@payload-ai-suite/ai-core'
+import { AIError, defineTool } from 'payload-ai-core'
+import type { AdapterContext, Order, ToolContext, ToolResult } from 'payload-ai-core'
 import { findVerifiedIdentity, hasOrderIdentity, systemAdapterCtx, turnOf } from '../state'
 import type { VerifiedIdentity } from '../state'
 

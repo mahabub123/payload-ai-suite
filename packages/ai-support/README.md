@@ -1,10 +1,10 @@
-# @payload-ai-suite/ai-support
+# payload-ai-support
 
 Support inbox module (design doc §10.5): ticket triage, grounded suggested replies and thread summaries, guarded auto-answers, weekly review insights and review moderation.
 
 ```ts
-import { aiCore } from '@payload-ai-suite/ai-core'
-import { aiSupport } from '@payload-ai-suite/ai-support'
+import { aiCore } from 'payload-ai-core'
+import { aiSupport } from 'payload-ai-support'
 
 plugins: [
   aiCore({ /* … */ }),
@@ -30,7 +30,7 @@ plugins: [
 **Delivery** — the `ai-support-reply` hook: other modules register a listener in their `onInit`:
 
 ```ts
-import { onSupportReply } from '@payload-ai-suite/ai-support'
+import { onSupportReply } from 'payload-ai-support'
 onSupportReply(payload, async ({ ticket, body, html, auto }) => {
   if (ticket.source !== 'channel') return false
   await sendOnWhatsApp(ticket, body)

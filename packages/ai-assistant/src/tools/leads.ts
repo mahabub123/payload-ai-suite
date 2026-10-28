@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { defineTool } from '@payload-ai-suite/ai-core'
+import { defineTool } from 'payload-ai-core'
 
 export const captureLead = defineTool({
   name: 'captureLead',

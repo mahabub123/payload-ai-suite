@@ -1,5 +1,5 @@
-import { getSuiteState } from '@payload-ai-suite/ai-core'
-import type { AICoreOptions, AIContext, Card, CoreServices } from '@payload-ai-suite/ai-core'
+import { getSuiteState } from 'payload-ai-core'
+import type { AICoreOptions, AIContext, Card, CoreServices } from 'payload-ai-core'
 import { MODULE, TICKETS, truncate, turnOf } from './state'
 
 export interface HandoffInput {

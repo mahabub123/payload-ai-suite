@@ -1,5 +1,5 @@
 import type { Payload } from 'payload'
-import type { Card, CoreServices } from '@payload-ai-suite/ai-core'
+import type { Card, CoreServices } from 'payload-ai-core'
 import type { MetricCall } from '../ask'
 import { collectionExists } from '../data'
 import { formatMoney } from '../money'

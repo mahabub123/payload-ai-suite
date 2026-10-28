@@ -1,4 +1,4 @@
-import type { SuiteRole } from '@payload-ai-suite/ai-core'
+import type { SuiteRole } from 'payload-ai-core'
 
 export interface AiMarketingSequenceFlags {
   abandonedCart?: boolean

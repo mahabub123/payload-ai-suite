@@ -1,4 +1,4 @@
-import type { SuiteRole } from '@payload-ai-suite/ai-core'
+import type { SuiteRole } from 'payload-ai-core'
 import type { StructuredFilter } from '../filter'
 
 export type StepType = 'classify' | 'summarize' | 'draft' | 'extract'

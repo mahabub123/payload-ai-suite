@@ -1,6 +1,6 @@
 'use client'
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
-import type { ActionStatus, Card, ChatRequestBody, StreamWireEvent } from '@payload-ai-suite/ai-core/wire'
+import type { ActionStatus, Card, ChatRequestBody, StreamWireEvent } from 'payload-ai-core/wire'
 import { AISuiteRequestError, randomId, storage } from '../client'
 import { chatReducer, initialChatState } from '../chatReducer'
 import type { ChatUIMessage } from '../chatReducer'

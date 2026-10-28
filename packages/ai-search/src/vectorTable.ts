@@ -1,4 +1,4 @@
-import type { Offering, OfferingSummary, VectorStore, VectorTableSpec } from '@payload-ai-suite/ai-core'
+import type { Offering, OfferingSummary, VectorStore, VectorTableSpec } from 'payload-ai-core'
 import { OFFERINGS_TABLE_NAME } from './constants'
 
 /** One vector per offering, with SQL filter columns (design doc §7.4, §8). Money in minor units. */

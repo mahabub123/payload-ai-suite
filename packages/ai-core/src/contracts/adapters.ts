@@ -1,6 +1,6 @@
 /**
  * Business concept adapter contracts (design doc §3).
- * Implementations and presets live in @payload-ai-suite/ai-adapters; the types live
+ * Implementations and presets live in payload-ai-adapters; the types live
  * here so core and every module can depend on them without a cycle.
  *
  * Rules:
@@ -339,7 +339,7 @@ export interface AdapterValidationResult {
   problems: string[]
 }
 
-/** What @payload-ai-suite/ai-adapters hands to the core. */
+/** What payload-ai-adapters hands to the core. */
 export interface AdapterProvider {
   preset: string
   /**

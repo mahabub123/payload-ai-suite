@@ -7,8 +7,8 @@ import type {
   OfferingAdapter,
   SearchEventBody,
   SearchResponse,
-} from '@payload-ai-suite/ai-core'
-import { getAI, getSuiteState } from '@payload-ai-suite/ai-core'
+} from 'payload-ai-core'
+import { getAI, getSuiteState } from 'payload-ai-core'
 import { MODULE, OFFERINGS_TABLE_NAME, PROMPTS, SLUGS } from './constants'
 import { local, sessionHash, tenantData, tenantWhere } from './db'
 import {

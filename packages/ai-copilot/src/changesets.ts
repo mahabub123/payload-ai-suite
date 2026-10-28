@@ -1,5 +1,5 @@
-import { AIError } from '@payload-ai-suite/ai-core'
-import type { AIContext, CoreServices } from '@payload-ai-suite/ai-core'
+import { AIError } from 'payload-ai-core'
+import type { AIContext, CoreServices } from 'payload-ai-core'
 import { CHANGESETS } from './collections'
 import { api, hasDrafts, idOf } from './local'
 import { COPILOT_CONTEXT_FLAG, PROTECTED_FIELDS } from './options'

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { AIError, defineTool } from '@payload-ai-suite/ai-core'
+import { AIError, defineTool } from 'payload-ai-core'
 import { createHandoff } from '../handoff'
 import { turnOf } from '../state'
 

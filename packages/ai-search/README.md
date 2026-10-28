@@ -1,10 +1,10 @@
-# @payload-ai-suite/ai-search
+# payload-ai-search
 
 Smart Search & Recommendations for the Payload AI Suite (design doc §10.2). It combines semantic and keyword search, turns plain-language queries into real catalog filters, and serves similar, bought-together and for-you recommendations. It also runs a weekly learning loop, and search keeps working when AI calls fail.
 
 ```ts
-import { aiCore } from '@payload-ai-suite/ai-core'
-import { aiSearch } from '@payload-ai-suite/ai-search'
+import { aiCore } from 'payload-ai-core'
+import { aiSearch } from 'payload-ai-search'
 
 plugins: [
   aiCore({ /* providers, routes, adapters … */ }),

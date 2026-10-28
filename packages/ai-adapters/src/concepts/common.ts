@@ -1,4 +1,4 @@
-import type { AdapterContext, Money } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, Money } from 'payload-ai-core'
 import type { ReadOptions, Doc } from '../mapping/values'
 import { getPath, relDoc, toMinor, toStr } from '../mapping/values'
 import type { ResolveEnv, ResolvedTarget } from '../resolve'

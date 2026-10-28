@@ -1,7 +1,7 @@
 'use client'
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import type { KeyboardEvent, ReactNode } from 'react'
-import type { Card, ChatRequestBody, Slot } from '@payload-ai-suite/ai-core/wire'
+import type { Card, ChatRequestBody, Slot } from 'payload-ai-core/wire'
 import { actionResultFor } from '../chatReducer'
 import type { ChatUIMessage } from '../chatReducer'
 import { formatDateTime } from '../format'

@@ -2,8 +2,8 @@
  * Thin Local API wrapper that applies the adapter rules in one place:
  * caller access (overrideAccess:false + req/user) unless ctx.system, tenant scoping, published filtering, locale.
  */
-import type { AdapterContext } from '@payload-ai-suite/ai-core'
-import { coerceRelationIds } from '@payload-ai-suite/ai-core'
+import type { AdapterContext } from 'payload-ai-core'
+import { coerceRelationIds } from 'payload-ai-core'
 import type { Where } from 'payload'
 import type { Doc } from './mapping/values'
 import { getPath, relId } from './mapping/values'

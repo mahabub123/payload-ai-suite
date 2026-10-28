@@ -1,5 +1,5 @@
 import type { CollectionConfig, Config, Field } from 'payload'
-import { getSuiteState, type AICoreOptions } from '@payload-ai-suite/ai-core'
+import { getSuiteState, type AICoreOptions } from 'payload-ai-core'
 import { BULK_VIEW_PATH, CLIENT } from './constants'
 import { appendAfterInput, autoDetectPaths, collectTextFields, mapFieldsAtPaths } from './fields'
 import type { AiContentOptions, ContentAction, TargetFieldType } from './types'

@@ -1,6 +1,6 @@
 'use client'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import type { Card } from '@payload-ai-suite/ai-core/wire'
+import type { Card } from 'payload-ai-core/wire'
 import { Chart } from './Chart'
 import { readSSE } from './sse'
 import { fetchReports, useInsightsApi, type ReportRow } from './useInsightsApi'

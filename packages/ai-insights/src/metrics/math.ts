@@ -1,5 +1,5 @@
 /** Pure metric math over adapter-shaped records. Money stays in integer minor units throughout. */
-import type { Cart, Order } from '@payload-ai-suite/ai-core'
+import type { Cart, Order } from 'payload-ai-core'
 import { bucketKey, bucketKeys, type ResolvedPeriod } from '../period'
 import { pct } from '../money'
 

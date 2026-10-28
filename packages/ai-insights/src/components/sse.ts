@@ -1,4 +1,4 @@
-import type { StreamWireEvent } from '@payload-ai-suite/ai-core/wire'
+import type { StreamWireEvent } from 'payload-ai-core/wire'
 
 /** Parse a text/event-stream response into wire events. */
 export async function* readSSE(res: Response): AsyncIterable<StreamWireEvent> {

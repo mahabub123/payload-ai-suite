@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { AIError } from '@payload-ai-suite/ai-core'
+import { AIError } from 'payload-ai-core'
 import { createMediaHarness } from '../test/setup'
 import { SKIP_CONTEXT_KEY } from './constants'
 

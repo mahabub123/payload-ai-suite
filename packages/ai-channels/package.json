@@ -1,5 +1,5 @@
 {
-  "name": "@payload-ai-suite/ai-channels",
+  "name": "payload-ai-channels",
   "version": "0.1.0",
   "description": "WhatsApp, Messenger and email channels",
   "type": "module",
@@ -35,8 +35,8 @@
   },
   "dependencies": {
     "zod": "^4.1.0",
-    "@payload-ai-suite/ai-core": "workspace:*",
-    "@payload-ai-suite/ai-assistant": "workspace:*"
+    "payload-ai-core": "workspace:*",
+    "payload-ai-assistant": "workspace:*"
   },
   "devDependencies": {
     "payload": "3.92.1"

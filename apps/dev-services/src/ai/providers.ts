@@ -1,4 +1,4 @@
-import type { ProviderConfig, RoutesOption, TaskClass } from '@payload-ai-suite/ai-suite'
+import type { ProviderConfig, RoutesOption, TaskClass } from 'payload-ai-suite'
 
 const env = (k: string) => process.env[k]?.trim() || undefined
 

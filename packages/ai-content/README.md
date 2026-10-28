@@ -1,11 +1,11 @@
-# @payload-ai-suite/ai-content — Catalog & Content Studio
+# payload-ai-content — Catalog & Content Studio
 
 AI writing help for staff inside the Payload admin (design §10.3). Nothing publishes automatically:
 single-field results are inserted into the form for the editor to save, bulk results become drafts after review.
 
 ```ts
-import { aiCore } from '@payload-ai-suite/ai-core'
-import { aiContent } from '@payload-ai-suite/ai-content'
+import { aiCore } from 'payload-ai-core'
+import { aiContent } from 'payload-ai-content'
 
 plugins: [
   aiCore({ /* providers, routes, adapters … */ }),
@@ -54,7 +54,7 @@ Prices and stock are never sent as context.
 The bulk job (`ai-content-bulk`, retries 2, idempotent per doc+field) writes **only** pending generations. When the
 route has a batch-capable model it sends calls with `needs: ['batch']` and higher concurrency; otherwise sequential.
 
-## Admin UI (`@payload-ai-suite/ai-content/client`)
+## Admin UI (`payload-ai-content/client`)
 
 `AIFieldButton` (attached to `admin.components.afterInput`, existing components kept), `AIGeneratePanel`,
 `BulkEnrichAction` (`beforeListTable`), `BulkReviewView` (custom view `/admin/ai-content/bulk/:runId`).

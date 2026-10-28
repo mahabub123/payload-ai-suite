@@ -1,5 +1,5 @@
-import { createFakeServices, createToolContext } from '@payload-ai-suite/ai-core/testing'
-import type { Actor, Surface } from '@payload-ai-suite/ai-core'
+import { createFakeServices, createToolContext } from 'payload-ai-core/testing'
+import type { Actor, Surface } from 'payload-ai-core'
 import type { ResolvedCopilotOptions } from '../options'
 import { createFakePayload } from './fakePayload'
 

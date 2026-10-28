@@ -13,7 +13,7 @@ export interface AICoreOptions {
   }
   /** Tenants may add their own providers/keys in the admin (encrypted at rest). */
   allowTenantKeys?: boolean
-  /** Business adapters (from @payload-ai-suite/ai-adapters createAdapters()). */
+  /** Business adapters (from payload-ai-adapters createAdapters()). */
   adapters?: AdapterProvider
   locales?: string[]
   defaultLocale?: string

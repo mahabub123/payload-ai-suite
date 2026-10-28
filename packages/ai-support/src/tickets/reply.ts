@@ -1,6 +1,6 @@
 import type { Payload } from 'payload'
-import type { AIContext, CoreServices } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AIContext, CoreServices } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { INTERNAL, SLUGS, type TicketDoc, type TicketReply, type TicketStatus } from '../util'
 
 export interface SupportReplyEvent {

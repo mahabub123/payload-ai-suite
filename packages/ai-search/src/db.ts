@@ -1,6 +1,6 @@
 import type { Payload, Where } from 'payload'
-import type { AICoreOptions, AIContext, CoreServices } from '@payload-ai-suite/ai-core'
-import { getSuiteState } from '@payload-ai-suite/ai-core'
+import type { AICoreOptions, AIContext, CoreServices } from 'payload-ai-core'
+import { getSuiteState } from 'payload-ai-core'
 
 /** Loose Local API access for this module's own collections (no generated types in a plugin). */
 type Doc = Record<string, any>

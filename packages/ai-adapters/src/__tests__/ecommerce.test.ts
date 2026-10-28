@@ -1,5 +1,5 @@
-import type { AdapterContext } from '@payload-ai-suite/ai-core'
-import { isAIError } from '@payload-ai-suite/ai-core'
+import type { AdapterContext } from 'payload-ai-core'
+import { isAIError } from 'payload-ai-core'
 import { describe, expect, it } from 'vitest'
 import { createAdapters } from '../createAdapters'
 import { ecommerceStore, users } from './fixtures'

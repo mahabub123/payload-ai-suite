@@ -1,5 +1,5 @@
-import type { LeadAdapter } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { LeadAdapter } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { create } from '../local'
 import type { Doc } from '../mapping/values'
 import { setPath } from '../mapping/values'

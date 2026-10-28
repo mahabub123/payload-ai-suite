@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { AIError } from '@payload-ai-suite/ai-core'
-import { collect, createFakeServices, createToolContext } from '@payload-ai-suite/ai-core/testing'
+import { AIError } from 'payload-ai-core'
+import { collect, createFakeServices, createToolContext } from 'payload-ai-core/testing'
 import { applyChangeset, discardChangeset } from './changesets'
 import { copilotChat } from './chat'
 import { buildCopilotTools, COPILOT_TOOL_NAMES } from './tools'

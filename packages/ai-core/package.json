@@ -1,5 +1,5 @@
 {
-  "name": "@payload-ai-suite/ai-core",
+  "name": "payload-ai-core",
   "version": "0.1.0",
   "description": "AI core: providers, router, agent runtime, tools, prompts, guardrails, knowledge, memory, usage, budgets, audit",
   "type": "module",

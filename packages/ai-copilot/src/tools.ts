@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { AIError, defineTool } from '@payload-ai-suite/ai-core'
-import type { AITool, ToolContext } from '@payload-ai-suite/ai-core'
+import { AIError, defineTool } from 'payload-ai-core'
+import type { AITool, ToolContext } from 'payload-ai-core'
 import { CHANGESETS } from './collections'
 import { filterSchema, toWhere } from './filter'
 import { api, idOf } from './local'

@@ -12,7 +12,7 @@ import {
   type MessagePart,
   type RenderedPrompt,
   type StreamWireEvent,
-} from '@payload-ai-suite/ai-core'
+} from 'payload-ai-core'
 import { GENERATIONS } from './constants'
 import { getFieldInfo, getPath, toPlainText } from './fields'
 import { markdownToLexical } from './lexical'

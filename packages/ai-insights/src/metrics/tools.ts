@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import type { AITool, AIContext } from '@payload-ai-suite/ai-core'
-import { defineTool, hasRole } from '@payload-ai-suite/ai-core'
+import type { AITool, AIContext } from 'payload-ai-core'
+import { defineTool, hasRole } from 'payload-ai-core'
 import { periodSchema, resolvePeriod } from '../period'
 import {
   aiImpactMetric,

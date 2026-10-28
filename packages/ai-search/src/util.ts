@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { AIError, isAIError } from '@payload-ai-suite/ai-core'
+import { AIError, isAIError } from 'payload-ai-core'
 
 /** Reject with AIError('timeout') after `ms`; `onTimeout` aborts the underlying call. */
 export const withTimeout = <T>(p: Promise<T>, ms: number, onTimeout?: () => void): Promise<T> =>

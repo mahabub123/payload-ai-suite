@@ -1,5 +1,5 @@
 import type { Payload } from 'payload'
-import type { TaskClass } from '@payload-ai-suite/ai-core'
+import type { TaskClass } from 'payload-ai-core'
 
 export interface ImageSource {
   url?: string

@@ -1,5 +1,5 @@
 import type { Payload } from 'payload'
-import type { Card } from '@payload-ai-suite/ai-core'
+import type { Card } from 'payload-ai-core'
 import { REPORTS } from './collections'
 import { collectionExists, tenantFieldOf } from './data'
 

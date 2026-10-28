@@ -1,12 +1,12 @@
-# @payload-ai-suite/ai-adapters
+# payload-ai-adapters
 
 Business concept adapters for the Payload AI Suite (design doc §3). The AI modules never hard-code collection
 names. They work with **concepts** (Offering, Category, Customer, Order, Cart, Knowledge, Lead, Review, Booking)
 and use this package to map those concepts onto your collections and fields. Every call goes through the Payload Local API with the caller's
-access. The adapter contracts are defined in `@payload-ai-suite/ai-core` (`contracts/adapters.ts`).
+access. The adapter contracts are defined in `payload-ai-core` (`contracts/adapters.ts`).
 
 ```ts
-import { createAdapters } from '@payload-ai-suite/ai-adapters'
+import { createAdapters } from 'payload-ai-adapters'
 
 aiSuite({
   adapters: createAdapters({ preset: 'ecommerce' }), // zero config for @payloadcms/plugin-ecommerce
@@ -161,7 +161,7 @@ Exported for modules that read mapped docs directly:
 
 ## Testing
 
-`@payload-ai-suite/ai-adapters/testing` exports `createFakePayload()`, an in-memory Local API for adapter-backed
+`payload-ai-adapters/testing` exports `createFakePayload()`, an in-memory Local API for adapter-backed
 tests. It supports `where` operators, sort, pagination, depth population (relationship, upload and join), simple
 collection access, and a call log that records `overrideAccess`, `user` and `where`. The contract tests in `src/__tests__` run
 the presets against the **real** `@payloadcms/plugin-ecommerce` collection factories.

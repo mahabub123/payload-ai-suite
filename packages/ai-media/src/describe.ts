@@ -1,5 +1,5 @@
 import type { Payload, TaskConfig } from 'payload'
-import { AIError, getAI, isAIError, type AIContext, type CoreServices } from '@payload-ai-suite/ai-core'
+import { AIError, getAI, isAIError, type AIContext, type CoreServices } from 'payload-ai-core'
 import { DESCRIBE_TASK, MODULE, SKIP_CONTEXT_KEY } from './constants'
 import { clamp, hasField, imageInfo, imagePart, isImage, isLocalizedField, normalizeTags, resolveImage } from './image'
 import { ALT_MAX, describeSchema, languageName, localeNote } from './prompts'

@@ -1,10 +1,10 @@
-# @payload-ai-suite/ai-media — Media AI
+# payload-ai-media — Media AI
 
 Alt text and tags on upload, background removal, variations, lifestyle shots and image-to-listing (design §10.7).
 Generated images are always saved as **new** media docs labelled AI-generated; originals are never replaced.
 
 ```ts
-import { aiMedia } from '@payload-ai-suite/ai-media'
+import { aiMedia } from 'payload-ai-media'
 
 plugins: [
   aiCore({ /* … */ }),

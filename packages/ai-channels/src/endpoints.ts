@@ -1,5 +1,5 @@
 import type { PayloadRequest } from 'payload'
-import type { AIEndpointDefinition } from '@payload-ai-suite/ai-core'
+import type { AIEndpointDefinition } from 'payload-ai-core'
 import { MODULE } from './constants'
 import { ingestWebhook } from './inbound'
 import { CHANNEL_NAMES, type AiChannelsOptions, type ChannelName } from './options'

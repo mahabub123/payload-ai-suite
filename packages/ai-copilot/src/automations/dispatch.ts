@@ -1,5 +1,5 @@
 import type { Payload } from 'payload'
-import type { CoreServices } from '@payload-ai-suite/ai-core'
+import type { CoreServices } from 'payload-ai-core'
 import { AUTOMATIONS } from '../collections'
 import { api } from '../local'
 import { COPILOT_CONTEXT_FLAG } from '../options'

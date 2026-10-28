@@ -1,12 +1,12 @@
-# @payload-ai-suite/ai-insights
+# payload-ai-insights
 
 Ask-your-data, scheduled briefings and anomaly alerts for Payload CMS v3 (design doc §10.6). The model **never writes SQL**: it can only call typed, read-only metric tools whose numbers are computed in code and are tenant-scoped. Every number in an answer is checked against the tool outputs.
 
 ## Install
 
 ```ts
-import { aiCore } from '@payload-ai-suite/ai-core'
-import { aiInsights } from '@payload-ai-suite/ai-insights'
+import { aiCore } from 'payload-ai-core'
+import { aiInsights } from 'payload-ai-insights'
 
 plugins: [
   aiCore({ /* providers, routes, adapters … */ }),
@@ -76,7 +76,7 @@ Both jobs are idempotent: one report per period and tenant (`dedupeKey`), and an
 
 ## Admin UI
 
-Exported from `@payload-ai-suite/ai-insights/client`:
+Exported from `payload-ai-insights/client`:
 - `InsightsView`: the "Ask your data" view at `/admin/ai-insights`. It has a question box, a period picker, the streaming answer, SVG charts and recent reports.
 - `InsightsNavLink`: added to `afterNavLinks`.
 - `InsightsDashboardPanel`: added to `afterDashboard`. It shows the latest briefing and anomalies, and only appears for users who can read reports.

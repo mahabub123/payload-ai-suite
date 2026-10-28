@@ -1,4 +1,4 @@
-import type { AdapterContext, Review, ReviewAdapter } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, Review, ReviewAdapter } from 'payload-ai-core'
 import type { Where } from 'payload'
 import { and, find, iterateDocs, update } from '../local'
 import type { Doc } from '../mapping/values'

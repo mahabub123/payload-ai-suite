@@ -1,6 +1,6 @@
 'use client'
 import { useCallback, useMemo } from 'react'
-import type { SearchEventBody } from '@payload-ai-suite/ai-core/wire'
+import type { SearchEventBody } from 'payload-ai-core/wire'
 import { randomId } from '../client'
 import { useAISuite } from '../provider'
 

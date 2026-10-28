@@ -1,10 +1,10 @@
-# @payload-ai-suite/ai-copilot
+# payload-ai-copilot
 
 Staff copilot for the Payload admin plus AI automations with approval steps (design doc §10.8).
 Requires `aiCore()` before it in `plugins[]` (or enable via `aiSuite({ modules: { copilot: {...} } })`).
 
 ```ts
-import { aiCopilot } from '@payload-ai-suite/ai-copilot'
+import { aiCopilot } from 'payload-ai-copilot'
 
 plugins: [aiCore({...}), aiCopilot({ automations: true, collections: ['products', 'reviews', 'posts'], maxBulkItems: 200 })]
 ```
@@ -41,4 +41,4 @@ Conversations are stored via core memory on channel `admin`.
 Example: `reviewAlertAutomation('reviews', ['owner@shop.test'])` — "new review → summarize → alert if negative".
 
 ## Client exports
-`@payload-ai-suite/ai-copilot/client`: `CopilotProvider`, `CopilotPanel`, `DiffViewer`.
+`payload-ai-copilot/client`: `CopilotProvider`, `CopilotPanel`, `DiffViewer`.

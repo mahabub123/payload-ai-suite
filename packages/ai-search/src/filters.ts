@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { Facets } from '@payload-ai-suite/ai-core'
+import type { Facets } from 'payload-ai-core'
 
 /** What the `fast` model is asked to produce. Prices are major units as written by the shopper. */
 export const parsedQuerySchema = z.object({

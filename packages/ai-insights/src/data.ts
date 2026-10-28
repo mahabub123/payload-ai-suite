@@ -4,8 +4,8 @@
  * with the Local API, scoped to the tenant explicitly.
  */
 import type { Payload, Where } from 'payload'
-import type { AICoreOptions, AIContext, Order } from '@payload-ai-suite/ai-core'
-import { getSuiteState } from '@payload-ai-suite/ai-core'
+import type { AICoreOptions, AIContext, Order } from 'payload-ai-core'
+import { getSuiteState } from 'payload-ai-core'
 import type { ResolvedPeriod } from './period'
 
 type Ctx = Pick<AIContext, 'payload' | 'adapters' | 'adapterCtx' | 'tenant'>

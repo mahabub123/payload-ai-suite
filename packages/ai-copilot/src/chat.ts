@@ -1,4 +1,4 @@
-import type { AIContext, AITool, CoreServices, StreamWireEvent } from '@payload-ai-suite/ai-core'
+import type { AIContext, AITool, CoreServices, StreamWireEvent } from 'payload-ai-core'
 
 export interface CopilotChatInput {
   message: string

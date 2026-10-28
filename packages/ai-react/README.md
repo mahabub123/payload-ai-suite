@@ -1,10 +1,10 @@
-# @payload-ai-suite/ai-react
+# payload-ai-react
 
-Client-only storefront React components and hooks for the Payload AI Suite. React 19, no server dependencies; types come from `@payload-ai-suite/ai-core/wire`.
+Client-only storefront React components and hooks for the Payload AI Suite. React 19, no server dependencies; types come from `payload-ai-core/wire`.
 
 ```tsx
 'use client'
-import { AISuiteProvider, AssistantWidget, SearchBox, RecommendationsBlock } from '@payload-ai-suite/ai-react'
+import { AISuiteProvider, AssistantWidget, SearchBox, RecommendationsBlock } from 'payload-ai-react'
 
 <AISuiteProvider baseUrl="/api/ai" locale="bn" turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}>
   <SearchBox onSubmit={(q) => router.push(`/search?q=${encodeURIComponent(q)}`)} />

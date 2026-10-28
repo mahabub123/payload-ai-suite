@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import type { AITool, Money, OfferingSummary, ToolContext } from '@payload-ai-suite/ai-core'
-import { defineTool } from '@payload-ai-suite/ai-core'
+import type { AITool, Money, OfferingSummary, ToolContext } from 'payload-ai-core'
+import { defineTool } from 'payload-ai-core'
 import { TOOL_NAMES } from './constants'
 import { getSearchEngine } from './engine'
 import { toMajor } from './filters'

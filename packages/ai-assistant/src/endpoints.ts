@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { AIError } from '@payload-ai-suite/ai-core'
-import type { AIContext, AIEndpointDefinition, CoreServices, StoredMessage } from '@payload-ai-suite/ai-core'
+import { AIError } from 'payload-ai-core'
+import type { AIContext, AIEndpointDefinition, CoreServices, StoredMessage } from 'payload-ai-core'
 import { getAssistantOptions } from './options'
 import { MODULE } from './state'
 import { runAssistantTurn } from './turn'

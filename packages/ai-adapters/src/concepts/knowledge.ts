@@ -1,4 +1,4 @@
-import type { KnowledgeAdapter, KnowledgeDoc, Visibility } from '@payload-ai-suite/ai-core'
+import type { KnowledgeAdapter, KnowledgeDoc, Visibility } from 'payload-ai-core'
 import { inTenant, isPublishedDoc, iterateDocs } from '../local'
 import { fillPattern, getPath, toIso, toStr, toText } from '../mapping/values'
 import type { Resolution, ResolveEnv } from '../resolve'

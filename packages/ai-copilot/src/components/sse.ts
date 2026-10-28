@@ -1,4 +1,4 @@
-import type { StreamWireEvent } from '@payload-ai-suite/ai-core/wire'
+import type { StreamWireEvent } from 'payload-ai-core/wire'
 
 /** POST JSON and yield parsed SSE wire events. */
 export async function* postSSE(url: string, body: unknown, signal?: AbortSignal): AsyncIterable<StreamWireEvent> {

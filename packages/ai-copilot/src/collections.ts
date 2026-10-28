@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { access } from '@payload-ai-suite/ai-core'
+import { access } from 'payload-ai-core'
 import { invalidateAutomationCache } from './automations/cache'
 
 export const CHANGESETS = 'ai-copilot-changesets'

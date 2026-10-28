@@ -15,7 +15,7 @@ const suitePackages = [
   'ai-copilot',
   'ai-react',
   'ai-suite',
-].map((p) => `@payload-ai-suite/${p}`)
+].map((p) => `payload-${p}`)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

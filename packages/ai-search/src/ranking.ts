@@ -1,4 +1,4 @@
-import type { Facets, OfferingSummary, SearchResponse } from '@payload-ai-suite/ai-core'
+import type { Facets, OfferingSummary, SearchResponse } from 'payload-ai-core'
 
 export interface Candidate {
   id: string

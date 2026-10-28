@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { collect, createFakeServices, createMockProvider, createTestContext, createToolContext } from '@payload-ai-suite/ai-core/testing'
-import type { Actor, StreamWireEvent } from '@payload-ai-suite/ai-core'
+import { collect, createFakeServices, createMockProvider, createTestContext, createToolContext } from 'payload-ai-core/testing'
+import type { Actor, StreamWireEvent } from 'payload-ai-core'
 import { askEndpoint, askInsights } from './ask'
 import { buildMetricTools } from './metrics/tools'
 import { resolveInsightsOptions } from './options'

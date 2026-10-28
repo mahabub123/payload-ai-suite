@@ -1,4 +1,4 @@
-import type { AIContext, AdapterContext, CoreServices, Card, ChatRequestBody } from '@payload-ai-suite/ai-core'
+import type { AIContext, AdapterContext, CoreServices, Card, ChatRequestBody } from 'payload-ai-core'
 import type { ResolvedAssistantOptions } from './options'
 
 export const MODULE = 'assistant'

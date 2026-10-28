@@ -1,4 +1,4 @@
-import type { AdapterSet, Cart, Customer, Offering, Order } from '@payload-ai-suite/ai-core'
+import type { AdapterSet, Cart, Customer, Offering, Order } from 'payload-ai-core'
 
 const DAY = 86_400_000
 export const daysAgo = (n: number, now = Date.now()) => new Date(now - n * DAY).toISOString()

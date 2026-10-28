@@ -3,7 +3,7 @@
  * site's config wins; preset defaults that don't exist are dropped (with a warning), never fatal —
  * except `required` logical fields and anything the site sets explicitly via overrides.
  */
-import type { ConceptName } from '@payload-ai-suite/ai-core'
+import type { ConceptName } from 'payload-ai-core'
 import type { PresetName } from './types'
 
 export type Candidates = string | string[]

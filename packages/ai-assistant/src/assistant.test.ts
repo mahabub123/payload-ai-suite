@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { AIError, setAI } from '@payload-ai-suite/ai-core'
-import type { Actor, StreamWireEvent } from '@payload-ai-suite/ai-core'
-import { collect, createFakeServices, createMockProvider, createTestContext } from '@payload-ai-suite/ai-core/testing'
+import { AIError, setAI } from 'payload-ai-core'
+import type { Actor, StreamWireEvent } from 'payload-ai-core'
+import { collect, createFakeServices, createMockProvider, createTestContext } from 'payload-ai-core/testing'
 import { createAdapters, createFakePayload } from '../test/fakes'
 import { buildAssistantModule } from './plugin'
 import type { AiAssistantOptions } from './options'
@@ -251,7 +251,7 @@ describe('outcome job', () => {
 describe('order access for verified guests', () => {
   it('reads as system scoped to the verified customer; logged-in customers keep their own access', async () => {
     const { resolveOrderAccess } = await import('./tools/orders')
-    const { createToolContext } = await import('@payload-ai-suite/ai-core/testing')
+    const { createToolContext } = await import('payload-ai-core/testing')
     const services = createFakeServices()
     const guest = createToolContext(services, { surface: 'storefront', actor: { kind: 'visitor', roles: [], visitorId: 'v1', customerId: 'c42' } })
     const g = await resolveOrderAccess(guest)

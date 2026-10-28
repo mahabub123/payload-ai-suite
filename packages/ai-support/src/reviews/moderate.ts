@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import type { Payload, TaskConfig } from 'payload'
-import type { AIEndpointDefinition, CoreServices, ReviewAdapter } from '@payload-ai-suite/ai-core'
-import { AIError, getAI } from '@payload-ai-suite/ai-core'
+import type { AIEndpointDefinition, CoreServices, ReviewAdapter } from 'payload-ai-core'
+import { AIError, getAI } from 'payload-ai-core'
 import { PROMPTS } from '../prompts'
 import { MODULE, SLUGS, TASKS, getPath, paramId, relId } from '../util'
 

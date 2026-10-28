@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { AIError, type AIContext, type AIEndpointDefinition, type Category, type CoreServices } from '@payload-ai-suite/ai-core'
+import { AIError, type AIContext, type AIEndpointDefinition, type Category, type CoreServices } from 'payload-ai-core'
 import { IMAGE_OPS, MODULE, SKIP_CONTEXT_KEY, type ImageOp } from './constants'
 import { budgetMessage, generateDescription } from './describe'
 import { clamp, extFor, hasField, imageInfo, imagePart, isImage, normalizeTags, resolveImage, tenantFieldName } from './image'

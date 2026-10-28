@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { PromptTemplate } from '@payload-ai-suite/ai-core'
+import type { PromptTemplate } from 'payload-ai-core'
 
 const LANGUAGE_NAMES: Record<string, string> = { en: 'English', bn: 'Bangla (Bengali)' }
 const base = (locale: string) => locale.toLowerCase().split(/[-_]/)[0] || 'en'

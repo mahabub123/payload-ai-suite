@@ -1,5 +1,5 @@
 {
-  "name": "@payload-ai-suite/ai-media",
+  "name": "payload-ai-media",
   "version": "0.1.0",
   "description": "Media AI: alt text, tags, background removal, variations",
   "type": "module",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "zod": "^4.1.0",
-    "@payload-ai-suite/ai-core": "workspace:*"
+    "payload-ai-core": "workspace:*"
   },
   "devDependencies": {
     "payload": "3.92.1"

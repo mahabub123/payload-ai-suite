@@ -1,4 +1,4 @@
-import type { AdapterContext, Category, CategoryAdapter } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, Category, CategoryAdapter } from 'payload-ai-core'
 import { find, findOne } from '../local'
 import type { Doc } from '../mapping/values'
 import { relId, toStr } from '../mapping/values'

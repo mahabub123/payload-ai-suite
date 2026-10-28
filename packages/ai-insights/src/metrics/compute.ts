@@ -2,7 +2,7 @@
  * Metric computations shared by the agent tools, briefings and anomaly jobs. All read-only.
  * Business data via adapters (ctx.adapterCtx carries caller access + tenant); suite collections via loadDocs.
  */
-import type { AIContext, Card, ChartSeries } from '@payload-ai-suite/ai-core'
+import type { AIContext, Card, ChartSeries } from 'payload-ai-core'
 import { collectionExists, loadDocs, loadOrders } from '../data'
 import { changePct, formatMoney, pct, toMajor } from '../money'
 import { periodJSON, previousPeriod, type ResolvedPeriod } from '../period'

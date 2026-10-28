@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { AIError, defineTool } from '@payload-ai-suite/ai-core'
-import type { OfferingSummary } from '@payload-ai-suite/ai-core'
+import { AIError, defineTool } from 'payload-ai-core'
+import type { OfferingSummary } from 'payload-ai-core'
 import { truncate } from '../state'
 
 /** Compact offering for the model: ids and key fields only. */

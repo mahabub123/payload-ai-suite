@@ -1,6 +1,6 @@
 import type { Plugin } from 'payload'
-import { createAIModulePlugin } from '@payload-ai-suite/ai-core'
-import type { AIModuleDefinition } from '@payload-ai-suite/ai-core'
+import { createAIModulePlugin } from 'payload-ai-core'
+import type { AIModuleDefinition } from 'payload-ai-core'
 import { resolveOptions, type AiSupportOptions } from './options'
 import { reviewFlagsCollection, reviewInsightsCollection } from './collections'
 import { extendSupportConfig } from './extend'

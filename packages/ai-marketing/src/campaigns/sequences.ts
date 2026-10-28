@@ -1,6 +1,6 @@
 import type { Payload, TaskConfig } from 'payload'
-import type { AIContext, CoreServices } from '@payload-ai-suite/ai-core'
-import { getAI } from '@payload-ai-suite/ai-core'
+import type { AIContext, CoreServices } from 'payload-ai-core'
+import { getAI } from 'payload-ai-core'
 import type { ResolvedMarketingOptions } from '../options'
 import { evaluateSegment } from '../segments/evaluate'
 import { segmentDefinition } from '../segments/schema'

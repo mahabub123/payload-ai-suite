@@ -1,5 +1,5 @@
 import type { Payload } from 'payload'
-import type { Card, CoreServices } from '@payload-ai-suite/ai-core'
+import type { Card, CoreServices } from 'payload-ai-core'
 import { collectionExists, loadDocs, loadOrders } from '../data'
 import { detectAnomaly, median, type AnomalyResult } from '../anomaly'
 import { formatMoney, toMajor } from '../money'

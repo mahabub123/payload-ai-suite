@@ -1,4 +1,4 @@
-import type { AdapterContext } from '@payload-ai-suite/ai-core'
+import type { AdapterContext } from 'payload-ai-core'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { createAdapters } from '../createAdapters'
 import { createFakePayload } from '../testing/fakePayload'

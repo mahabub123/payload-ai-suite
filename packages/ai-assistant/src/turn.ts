@@ -1,4 +1,4 @@
-import { getAI, isAIError } from '@payload-ai-suite/ai-core'
+import { getAI, isAIError } from 'payload-ai-core'
 import type {
   AIContext,
   Card,
@@ -8,7 +8,7 @@ import type {
   CoreServices,
   StreamWireEvent,
   ToolContext,
-} from '@payload-ai-suite/ai-core'
+} from 'payload-ai-core'
 import { createHandoff } from './handoff'
 import { getAssistantOptions, resolveOptions } from './options'
 import type { AiAssistantOptions, ResolvedAssistantOptions } from './options'

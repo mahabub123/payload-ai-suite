@@ -1,5 +1,5 @@
 'use client'
-import { RecommendationsBlock, SearchBox, SearchResults } from '@payload-ai-suite/ai-react'
+import { RecommendationsBlock, SearchBox, SearchResults } from 'payload-ai-react'
 import { useState } from 'react'
 
 /** Instant-search box; Enter shows the full results grid below it. */

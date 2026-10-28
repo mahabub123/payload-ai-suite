@@ -1,5 +1,5 @@
 import type { Plugin } from 'payload'
-import { createAIModulePlugin, type AIModuleDefinition } from '@payload-ai-suite/ai-core'
+import { createAIModulePlugin, type AIModuleDefinition } from 'payload-ai-core'
 import { bulkTask } from './bulk'
 import { bulkRunsCollection, generationsCollection } from './collections'
 import { MODULE } from './constants'

@@ -1,4 +1,4 @@
-import type { APIErrorBody } from '@payload-ai-suite/ai-core/wire'
+import type { APIErrorBody } from 'payload-ai-core/wire'
 
 export interface AISuiteConfig {
   /** Suite API base. Default '/api/ai'. */

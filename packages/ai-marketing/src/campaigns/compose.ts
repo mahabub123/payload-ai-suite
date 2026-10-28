@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import type { AIContext, AIEndpointDefinition, CoreServices } from '@payload-ai-suite/ai-core'
-import { AIError } from '@payload-ai-suite/ai-core'
+import type { AIContext, AIEndpointDefinition, CoreServices } from 'payload-ai-core'
+import { AIError } from 'payload-ai-core'
 import { MODULE, SLUGS, formatMoney, markdownToText } from '../util'
 import { PROMPTS } from '../prompts'
 import { CAMPAIGN_KINDS, type CampaignDoc, type CampaignKind, type CampaignStep, type ProductBlock } from './types'

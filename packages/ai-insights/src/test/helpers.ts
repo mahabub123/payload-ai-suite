@@ -1,5 +1,5 @@
 import type { Payload } from 'payload'
-import type { AdapterContext, AdapterSet, Cart, Order, OrderAdapter, CartAdapter } from '@payload-ai-suite/ai-core'
+import type { AdapterContext, AdapterSet, Cart, Order, OrderAdapter, CartAdapter } from 'payload-ai-core'
 
 export const order = (id: string, createdAt: string, amount: number, opts: Partial<Order> = {}): Order => ({
   id,
