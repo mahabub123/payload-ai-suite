@@ -27,14 +27,14 @@ jobs:
 
   publish:
     needs: checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       # Lets npm verify this workflow and add a provenance statement to the package.
       id-token: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           # Node 24 ships npm 11, which supports trusted publishing.
           node-version: 24

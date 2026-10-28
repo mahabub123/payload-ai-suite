@@ -7,9 +7,11 @@ on:
   # Lets the release workflow run the same checks before publishing.
   workflow_call:
 
+# The release workflow calls this one, so the group includes the calling workflow's name; otherwise
+# a release and a push to main would cancel each other. Only superseded pull request runs are cancelled.
 concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 env:
   PAYLOAD_SECRET: ci-secret-0123456789abcdef0123456789abcdef
@@ -19,12 +21,12 @@ env:
 jobs:
   check:
     name: Typecheck · unit tests · evals (mock)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
@@ -35,7 +37,7 @@ jobs:
         run: pnpm test
       - name: Evals (mock route, regression vs tooling/evals/baseline.json)
         run: pnpm evals --report eval-report.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: eval-report
@@ -44,7 +46,7 @@ jobs:
 
   integration:
     name: Postgres + pgvector · migrations · seed
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     services:
       postgres:
@@ -66,9 +68,9 @@ jobs:
       SMTP_HOST: localhost
       SMTP_PORT: '1025'
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
@@ -116,7 +118,7 @@ jobs:
     needs: [check, integration]
     # Pull requests run e2e only with the "e2e" label; pushes and releases always do.
     if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'e2e')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     services:
       postgres:
@@ -140,9 +142,9 @@ jobs:
       SMTP_PORT: '1025'
       E2E_BASE_URL: http://localhost:3000
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
@@ -160,7 +162,7 @@ jobs:
       - run: pnpm --filter @payload-ai-suite/tooling e2e --project chromium
       - name: Red-team suite against the mock-model server
         run: pnpm --filter @payload-ai-suite/tooling redteam --target http://localhost:3000
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: e2e-artifacts
