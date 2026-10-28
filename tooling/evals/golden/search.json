@@ -1,0 +1,23 @@
+[
+  { "id": "s-en-red-saree", "locale": "en", "query": "red saree", "expected": ["red-jamdani-saree", "red-cotton-saree-budget"] },
+  { "id": "s-en-red-saree-budget", "locale": "en", "query": "red saree under 3000 taka", "expected": ["red-jamdani-saree", "red-cotton-saree-budget"], "forbidden": ["green-katan-silk-saree"] },
+  { "id": "s-en-wedding-silk", "locale": "en", "query": "silk saree for wedding", "expected": ["green-katan-silk-saree"] },
+  { "id": "s-en-phone", "locale": "en", "query": "walton phone 128gb", "expected": ["walton-smartphone-x9"] },
+  { "id": "s-en-earbuds", "locale": "en", "query": "wireless earbuds", "expected": ["bluetooth-earbuds-pro"] },
+  { "id": "s-en-loadshedding", "locale": "en", "query": "fan for load-shedding", "expected": ["rechargeable-desk-fan"] },
+  { "id": "s-en-honey", "locale": "en", "query": "organic honey", "expected": ["sundarbans-honey-500g"] },
+  { "id": "s-en-rice", "locale": "en", "query": "aromatic rice for polao", "expected": ["chinigura-rice-5kg"] },
+  { "id": "s-en-tea", "locale": "en", "query": "sylhet tea", "expected": ["premium-tea-sylhet"] },
+  { "id": "s-en-kantha", "locale": "en", "query": "handmade kantha", "expected": ["nakshi-kantha-throw"] },
+  { "id": "s-en-panjabi-eid", "locale": "en", "query": "eid panjabi", "expected": ["white-cotton-panjabi", "maroon-silk-panjabi"] },
+  { "id": "s-en-cookware", "locale": "en", "query": "non stick pan", "expected": ["non-stick-frying-pan"] },
+  { "id": "s-en-tagore", "locale": "en", "query": "tagore poems", "expected": ["book-gitanjali"] },
+  { "id": "s-en-jute", "locale": "en", "query": "jute mat", "expected": ["jute-floor-mat"] },
+  { "id": "s-bn-saree", "locale": "bn", "query": "লাল শাড়ি", "expected": ["red-jamdani-saree", "red-cotton-saree-budget"] },
+  { "id": "s-bn-honey", "locale": "bn", "query": "মধু", "expected": ["sundarbans-honey-500g"] },
+  { "id": "s-bn-oil", "locale": "bn", "query": "সরিষার তেল", "expected": ["mustard-oil-1l"] },
+  { "id": "s-bn-panjabi", "locale": "bn", "query": "পাঞ্জাবি", "expected": ["white-cotton-panjabi", "maroon-silk-panjabi", "kids-yellow-panjabi"], "k": 5 },
+  { "id": "s-bn-fan", "locale": "bn", "query": "রিচার্জেবল ফ্যান", "expected": ["rechargeable-desk-fan"] },
+  { "id": "s-bn-tea-cup", "locale": "bn", "query": "মাটির কাপ", "expected": ["clay-tea-cups-set"] },
+  { "id": "s-bn-budget", "locale": "bn", "query": "৩০০০ টাকার নিচে শাড়ি", "expected": ["red-jamdani-saree", "blue-tangail-cotton-saree"], "forbidden": ["green-katan-silk-saree"] }
+]

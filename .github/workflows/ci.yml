@@ -1,0 +1,164 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PAYLOAD_SECRET: ci-secret-0123456789abcdef0123456789abcdef
+  AI_MOCK: '1'
+  NEXT_TELEMETRY_DISABLED: '1'
+
+jobs:
+  check:
+    name: Typecheck · unit tests · evals (mock)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Unit tests (Vitest, all packages + tooling)
+        run: pnpm test
+      - name: Evals (mock route, regression vs tooling/evals/baseline.json)
+        run: pnpm evals --report eval-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: eval-report.json
+          if-no-files-found: ignore
+
+  integration:
+    name: Postgres + pgvector · migrations · seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: payload
+          POSTGRES_PASSWORD: payload
+          POSTGRES_DB: payload_ai_store
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U payload"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+      mailpit:
+        image: axllent/mailpit:latest
+        ports: ['1025:1025', '8025:8025']
+    env:
+      PAYLOAD_DB_PUSH: '0'
+      JOBS_AUTORUN: '0'
+      SMTP_HOST: localhost
+      SMTP_PORT: '1025'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Create services database
+        run: PGPASSWORD=payload psql -h localhost -U payload -d payload_ai_store -c 'CREATE DATABASE payload_ai_services'
+      - name: Apply committed migrations (dev-store)
+        env:
+          DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_store
+        run: pnpm --filter dev-store payload migrate
+      - name: Migration drift check (dev-store)
+        env:
+          DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_store
+        run: |
+          pnpm --filter dev-store payload migrate:create ci_drift_check --skip-empty
+          if git status --porcelain apps/dev-store/src/migrations | grep -q .; then
+            echo "::error::Schema changed without a committed migration. Run 'pnpm --filter dev-store payload migrate:create' and commit it."
+            git status --porcelain apps/dev-store/src/migrations
+            exit 1
+          fi
+      - name: Apply committed migrations (dev-services)
+        env:
+          DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_services
+        run: pnpm --filter dev-services payload migrate
+      - name: Migration drift check (dev-services)
+        env:
+          DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_services
+        run: |
+          pnpm --filter dev-services payload migrate:create ci_drift_check --skip-empty
+          if git status --porcelain apps/dev-services/src/migrations | grep -q .; then
+            echo "::error::dev-services schema changed without a committed migration."
+            exit 1
+          fi
+      - name: Seed dev-store
+        env:
+          DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_store
+        run: pnpm --filter dev-store seed
+      - name: Seed dev-services
+        env:
+          DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_services
+        run: pnpm --filter dev-services seed
+
+  e2e:
+    name: E2E (Playwright + Mailpit, mock model)
+    needs: [check, integration]
+    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'e2e')
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: payload
+          POSTGRES_PASSWORD: payload
+          POSTGRES_DB: payload_ai_store
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U payload"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+      mailpit:
+        image: axllent/mailpit:latest
+        ports: ['1025:1025', '8025:8025']
+    env:
+      DATABASE_URI: postgres://payload:payload@localhost:5432/payload_ai_store
+      PAYLOAD_DB_PUSH: '0'
+      SMTP_HOST: localhost
+      SMTP_PORT: '1025'
+      E2E_BASE_URL: http://localhost:3000
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter dev-store payload migrate
+      - run: pnpm --filter dev-store seed
+      - run: pnpm --filter dev-store build
+      - name: Start dev-store
+        run: |
+          pnpm --filter dev-store start > dev-store.log 2>&1 &
+          npx wait-on -t 120000 http://localhost:3000/admin
+      - run: pnpm --filter @payload-ai-suite/tooling exec playwright install --with-deps chromium
+      - run: pnpm --filter @payload-ai-suite/tooling e2e --project chromium
+      - name: Red-team suite against the mock-model server
+        run: pnpm --filter @payload-ai-suite/tooling redteam --target http://localhost:3000
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-artifacts
+          path: |
+            tooling/playwright-report
+            tooling/test-results
+            dev-store.log

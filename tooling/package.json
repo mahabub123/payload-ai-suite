@@ -1,0 +1,28 @@
+{
+  "name": "@payload-ai-suite/tooling",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "evals": "tsx evals/run.ts",
+    "evals:live": "tsx evals/run.ts --mode live",
+    "redteam": "tsx redteam/run.ts",
+    "e2e": "playwright test",
+    "load:assistant": "k6 run load/k6-assistant.js",
+    "load:search": "k6 run load/k6-search.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@payload-ai-suite/ai-core": "workspace:*",
+    "@payload-ai-suite/ai-adapters": "workspace:*",
+    "@payload-ai-suite/ai-search": "workspace:*",
+    "@payload-ai-suite/ai-assistant": "workspace:*",
+    "@payload-ai-suite/ai-content": "workspace:*",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "@playwright/test": "^1.56.0"
+  }
+}

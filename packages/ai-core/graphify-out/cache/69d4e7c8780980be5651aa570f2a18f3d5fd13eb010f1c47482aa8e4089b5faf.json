@@ -1,0 +1,1 @@
+{"nodes": [{"id": "src_core_a_ts", "label": "core-a.ts", "file_type": "code", "source_file": "src/core-a.ts", "source_location": "L1"}], "edges": [{"source": "src_core_a_ts", "target": "payload", "relation": "imports_from", "confidence": "EXTRACTED", "source_file": "src/core-a.ts", "source_location": "L32", "weight": 1.0}], "raw_calls": []}

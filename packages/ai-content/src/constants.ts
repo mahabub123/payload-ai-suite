@@ -1,0 +1,6 @@
+export const MODULE = 'content'
+export const GENERATIONS = 'ai-generations'
+export const BULK_RUNS = 'ai-bulk-runs'
+export const BULK_TASK = 'ai-content-bulk'
+export const CLIENT = '@payload-ai-suite/ai-content/client'
+export const BULK_VIEW_PATH = '/ai-content/bulk/:runId'

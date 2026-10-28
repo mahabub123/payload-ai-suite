@@ -1,0 +1,11 @@
+[
+  { "id": "c-en-desc-jamdani", "locale": "en", "task": "description", "product": "red-jamdani-saree", "checks": { "minChars": 80, "maxChars": 900, "mustMention": [["jamdani", "Jamdani"], "red"], "banned": ["best in the world", "100% guaranteed", "cheapest"], "script": "latin", "noInventedPrices": true } },
+  { "id": "c-en-desc-phone", "locale": "en", "task": "description", "product": "walton-smartphone-x9", "checks": { "minChars": 80, "maxChars": 900, "mustMention": [["5000mAh", "5000 mAh"], "128GB"], "banned": ["cheapest", "revolutionary"], "script": "latin", "noInventedPrices": true } },
+  { "id": "c-en-seo-honey", "locale": "en", "task": "seo-meta", "product": "sundarbans-honey-500g", "checks": { "minChars": 50, "maxChars": 160, "mustMention": ["honey"], "script": "latin" } },
+  { "id": "c-en-social-fan", "locale": "en", "task": "social-post", "product": "rechargeable-desk-fan", "checks": { "minChars": 30, "maxChars": 280, "mustMention": ["fan"], "banned": ["click here"], "script": "latin", "noInventedPrices": true } },
+  { "id": "c-en-desc-kantha", "locale": "en", "task": "description", "product": "nakshi-kantha-throw", "checks": { "minChars": 80, "maxChars": 900, "mustMention": [["kantha", "Kantha"]], "script": "latin", "noInventedPrices": true } },
+  { "id": "c-bn-desc-jamdani", "locale": "bn", "task": "description", "product": "red-jamdani-saree", "checks": { "minChars": 60, "maxChars": 900, "mustMention": ["জামদানি"], "banned": ["সবচেয়ে সস্তা"], "script": "bengali", "noInventedPrices": true } },
+  { "id": "c-bn-desc-honey", "locale": "bn", "task": "description", "product": "sundarbans-honey-500g", "checks": { "minChars": 60, "maxChars": 900, "mustMention": ["মধু"], "script": "bengali", "noInventedPrices": true } },
+  { "id": "c-bn-seo-panjabi", "locale": "bn", "task": "seo-meta", "product": "white-cotton-panjabi", "checks": { "minChars": 30, "maxChars": 160, "mustMention": ["পাঞ্জাবি"], "script": "bengali" } },
+  { "id": "c-bn-social-tea", "locale": "bn", "task": "social-post", "product": "premium-tea-sylhet", "checks": { "minChars": 30, "maxChars": 280, "mustMention": ["চা"], "script": "bengali", "noInventedPrices": true } }
+]

@@ -1,0 +1,48 @@
+{
+  "name": "dev-services",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "payload": "payload",
+    "generate:importmap": "payload generate:importmap",
+    "generate:types": "payload generate:types",
+    "seed": "tsx src/seed/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "payload": "3.92.1",
+    "@payloadcms/next": "3.92.1",
+    "@payloadcms/ui": "3.92.1",
+    "@payloadcms/db-postgres": "3.92.1",
+    "@payloadcms/richtext-lexical": "3.92.1",
+    "@payloadcms/plugin-multi-tenant": "3.92.1",
+    "@payloadcms/email-nodemailer": "3.92.1",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "graphql": "^16.9.0",
+    "sharp": "^0.34.0",
+    "@payload-ai-suite/ai-core": "workspace:*",
+    "@payload-ai-suite/ai-adapters": "workspace:*",
+    "@payload-ai-suite/ai-content": "workspace:*",
+    "@payload-ai-suite/ai-search": "workspace:*",
+    "@payload-ai-suite/ai-assistant": "workspace:*",
+    "@payload-ai-suite/ai-marketing": "workspace:*",
+    "@payload-ai-suite/ai-support": "workspace:*",
+    "@payload-ai-suite/ai-channels": "workspace:*",
+    "@payload-ai-suite/ai-insights": "workspace:*",
+    "@payload-ai-suite/ai-media": "workspace:*",
+    "@payload-ai-suite/ai-copilot": "workspace:*",
+    "@payload-ai-suite/ai-react": "workspace:*",
+    "@payload-ai-suite/ai-suite": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0"
+  }
+}

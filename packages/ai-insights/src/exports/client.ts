@@ -1,0 +1,5 @@
+'use client'
+export { InsightsView } from '../components/InsightsView'
+export { InsightsDashboardPanel } from '../components/InsightsDashboardPanel'
+export { InsightsNavLink } from '../components/InsightsNavLink'
+export { Chart, type ChartProps } from '../components/Chart'

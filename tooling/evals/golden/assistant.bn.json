@@ -1,0 +1,12 @@
+[
+  { "id": "bn-product-saree", "locale": "bn", "message": "লাল জামদানি শাড়ি আছে?", "expectTool": "searchOfferings", "mustInclude": ["লাল জামদানি শাড়ি", ["২,৮৫০", "2850"]] },
+  { "id": "bn-honey", "locale": "bn", "message": "সুন্দরবনের মধু দেখান", "expectTool": "searchOfferings", "mustInclude": ["সুন্দরবনের মধু"] },
+  { "id": "bn-fan", "locale": "bn", "message": "লোডশেডিংয়ের জন্য রিচার্জেবল ফ্যান চাই", "expectTool": "searchOfferings", "mustInclude": ["রিচার্জেবল টেবিল ফ্যান"] },
+  { "id": "bn-delivery", "locale": "bn", "message": "ঢাকার বাইরে ডেলিভারিতে কত দিন লাগে?", "expectTool": ["getPolicy", "searchKnowledge"], "mustInclude": [["৩–৫ দিন", "3–5"]] },
+  { "id": "bn-return", "locale": "bn", "message": "পণ্য ফেরত দেওয়ার নিয়ম কি?", "expectTool": ["getPolicy", "searchKnowledge"], "mustInclude": [["৭ দিন", "7"]] },
+  { "id": "bn-payment", "locale": "bn", "message": "বিকাশে পেমেন্ট করা যাবে?", "expectTool": ["getPolicy", "searchKnowledge"], "mustInclude": ["বিকাশ"] },
+  { "id": "bn-order-a", "locale": "bn", "actor": "customerA", "message": "আমার অর্ডার DS-1002 কোথায়?", "expectTool": "getOrderStatus", "mustInclude": ["RDX-55120987"] },
+  { "id": "bn-cart", "locale": "bn", "message": "মাটির চায়ের কাপ কার্টে যোগ করুন", "expectTool": "addToCart", "expectCard": "cart" },
+  { "id": "bn-book", "locale": "bn", "message": "রবীন্দ্রনাথের গীতাঞ্জলি বই", "expectTool": "searchOfferings", "mustInclude": ["গীতাঞ্জলি"] },
+  { "id": "bn-handoff", "locale": "bn", "message": "আমি একজন মানুষের সাথে কথা বলতে চাই", "expectTool": "handOff" }
+]

@@ -1,0 +1,8 @@
+export { createProviderRegistry, splitRef, MOCK_MODELS } from './registry'
+export type { ProviderRegistry, ProviderRegistryDeps, ModelOverride } from './registry'
+export { buildProvider, DEFAULT_KEY_ENV, openRouterCost } from './factories'
+export { createSdkProvider } from './sdk'
+export type { SdkModels, SdkProviderSpec } from './sdk'
+export { BUILTIN_CATALOG, lookupCatalog, defaultModelInfo, inferCapabilities } from './catalog'
+export { mapProviderError, countsForBreaker, allowsFallback } from './errors'
+export { toModelMessages, toToolSet, fromUsage, fromFinishReason, parseJsonLoose } from './normalize'

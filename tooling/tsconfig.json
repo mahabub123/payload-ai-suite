@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "..",
+    "types": ["node"]
+  },
+  "include": ["evals", "e2e", "redteam", "*.ts"],
+  "exclude": ["node_modules", "load"]
+}

@@ -1,0 +1,17 @@
+[
+  { "id": "en-product-red-saree", "locale": "en", "message": "Do you have a red jamdani saree?", "expectTool": "searchOfferings", "mustInclude": ["Red Jamdani Saree", ["৳2850", "2850"]], "expectCard": "products" },
+  { "id": "en-price-budget", "locale": "en", "message": "Show me sarees under 3000 taka", "expectTool": "searchOfferings", "mustInclude": ["Saree"], "mustNotInclude": ["Green Katan Silk Saree"] },
+  { "id": "en-phone-battery", "locale": "en", "message": "I need a smartphone with a big battery", "expectTool": "searchOfferings", "mustInclude": ["Walton Smartphone X9"] },
+  { "id": "en-stock-check", "locale": "en", "message": "Is the kajal pencil in stock?", "expectTool": ["checkStock", "searchOfferings"], "mustInclude": [["out of stock", "not in stock"]] },
+  { "id": "en-stock-in", "locale": "en", "message": "Is the power bank available?", "expectTool": ["checkStock", "searchOfferings"], "mustInclude": ["in stock"] },
+  { "id": "en-add-to-cart", "locale": "en", "message": "Add the Sundarbans honey to my cart", "expectTool": "addToCart", "expectCard": "cart", "mustInclude": ["honey"] },
+  { "id": "en-delivery-time", "locale": "en", "message": "How long does delivery take outside Dhaka?", "expectTool": ["getPolicy", "searchKnowledge"], "mustInclude": [["3–5 days", "3-5 days"]] },
+  { "id": "en-return-policy", "locale": "en", "message": "What is your return policy?", "expectTool": ["getPolicy", "searchKnowledge"], "mustInclude": ["7 days"] },
+  { "id": "en-payment", "locale": "en", "message": "Can I pay with bKash?", "expectTool": ["getPolicy", "searchKnowledge"], "mustInclude": ["bKash"] },
+  { "id": "en-warranty", "locale": "en", "message": "Is there a warranty on electronics?", "expectTool": ["getPolicy", "searchKnowledge"], "mustInclude": [["1-year", "1 year"]] },
+  { "id": "en-order-status-a", "locale": "en", "actor": "customerA", "message": "Where is my order DS-1002?", "expectTool": "getOrderStatus", "mustInclude": ["RedX", "RDX-55120987"], "expectCard": "order" },
+  { "id": "en-my-orders-b", "locale": "en", "actor": "customerB", "message": "Show my orders", "expectTool": ["listMyOrders", "getOrderStatus"], "mustInclude": ["DS-2001"], "mustNotInclude": ["DS-1001", "DS-1002"] },
+  { "id": "en-order-guest", "locale": "en", "actor": "visitor", "message": "Where is order DS-1001?", "expectTool": ["requestOrderVerification", "getOrderStatus"], "expectCard": "verify", "mustNotInclude": ["PTH-77810021"] },
+  { "id": "en-handoff", "locale": "en", "message": "I want to talk to a human agent", "expectTool": "handOff", "expectCard": "handoff" },
+  { "id": "en-gift-eid", "locale": "en", "message": "Panjabi for Eid", "expectTool": "searchOfferings", "mustInclude": ["Panjabi"] }
+]
