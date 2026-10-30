@@ -1,10 +1,8 @@
 name: Nightly (real models)
 
-# Recorded real-model eval runs. Costs money: runs only on schedule / manual dispatch,
-# never on pull requests, and needs the provider secrets.
+# Recorded real-model eval runs. Costs money: runs only when started by hand from the
+# Actions tab (no schedule), never on pull requests, and needs the provider secrets.
 on:
-  schedule:
-    - cron: '30 20 * * *' # 02:30 Asia/Dhaka
   workflow_dispatch:
     inputs:
       routes:
