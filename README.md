@@ -182,7 +182,7 @@ k6 run -e BASE_URL=http://localhost:3000 tooling/load/k6-assistant.js   # 50 SSE
 k6 run -e BASE_URL=http://localhost:3000 tooling/load/k6-search.js      # 15 req/s, p95 < 300 ms
 ```
 
-CI (`.github/workflows/ci.yml`) runs install, typecheck, unit tests and mock-mode evals. It also runs a Postgres + pgvector service with migrations, a migration-drift check and seeding, and runs e2e and red-team on `main`. `nightly.yml` (started by hand from the Actions tab) runs recorded evals and red-team against real model routes (using provider secrets), plus the k6 load tests against the delayed-stream mock.
+CI (`.github/workflows/ci.yml`) runs install, typecheck, unit tests and mock-mode evals. It also runs a Postgres + pgvector service with migrations, a migration-drift check and seeding, and runs e2e and red-team on `main`. `release.yml` publishes to npm. Live-model evals and the k6 load tests run locally with the commands above.
 
 ## Releasing
 
